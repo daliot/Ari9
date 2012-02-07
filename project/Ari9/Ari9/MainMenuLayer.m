@@ -8,7 +8,7 @@
 
 
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "MainMenuLayer.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
@@ -16,7 +16,7 @@
 #pragma mark - HelloWorldLayer
 
 // HelloWorldLayer implementation
-@implementation HelloWorldLayer
+@implementation MainMenuLayer
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -25,7 +25,7 @@
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
+	MainMenuLayer *layer = [MainMenuLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];
@@ -41,61 +41,58 @@
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init])) {
 		
-		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
-		
-		
-		
-		//
-		// Leaderboards and Achievements
-		//
 		
 		// Default font size will be 28 points.
-		[CCMenuItemFont setFontSize:28];
+		[CCMenuItemFont setFontSize:20];
 		
 		// Achievement Menu Item using blocks
-		CCMenuItem *itemAchievement = [CCMenuItemFont itemWithString:@"Achievements" block:^(id sender) {
-			
-			
-			GKAchievementViewController *achivementViewController = [[GKAchievementViewController alloc] init];
-			achivementViewController.achievementDelegate = self;
-			
-			AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-			
-			[[app navController] presentModalViewController:achivementViewController animated:YES];
+		CCMenuItem *first = [CCMenuItemFont itemWithString:@"[  1  ]" block:^(id sender) {
+					
+			NSLog(@"first");
+			FirstLayer *firstLayer = [FirstLayer layerWithColor:ccc4(0,255,0,255) width:320 height:480];
+			firstLayer.position = ccp(0,0);
+//			firstLayer.anchorPoint = ccp(1.0f,1.0f);
+			[firstLayer setAnchorPoint:ccp(1.0f,1.0f)].
+			[self addChild:firstLayer];
 		}
 									   ];
 
 		// Leaderboard Menu Item using blocks
-		CCMenuItem *itemLeaderboard = [CCMenuItemFont itemWithString:@"Leaderboard" block:^(id sender) {
-			
-			
-			GKLeaderboardViewController *leaderboardViewController = [[GKLeaderboardViewController alloc] init];
-			leaderboardViewController.leaderboardDelegate = self;
-			
-			AppController *app = (AppController*) [[UIApplication sharedApplication] delegate];
-			
-			[[app navController] presentModalViewController:leaderboardViewController animated:YES];
+		CCMenuItem *second = [CCMenuItemFont itemWithString:@"[  2  ]" block:^(id sender) {
+						
+			NSLog(@"second");
 		}
 									   ];
 		
-		CCMenu *menu = [CCMenu menuWithItems:itemAchievement, itemLeaderboard, nil];
+		CCMenuItem *third = [CCMenuItemFont itemWithString:@"[  3  ]" block:^(id sender) {
+			
+			NSLog(@"third");
+		}
+							 ];
+
+		CCMenuItem *fourth = [CCMenuItemFont itemWithString:@"[  4  ]" block:^(id sender) {
+			
+			NSLog(@"fourth");
+		}
+							 ];
 		
-		[menu alignItemsHorizontallyWithPadding:20];
-		[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
+		CCMenuItem *fifth = [CCMenuItemFont itemWithString:@"[  5  ]" block:^(id sender) {
+			
+			NSLog(@"fifth");
+		}
+							 ];
+
+
+		
+		CCMenu *menu = [CCMenu menuWithItems:first, second,third,fourth,fifth, nil];
+		[menu setColor:ccGRAY];
+		[menu alignItemsHorizontallyWithPadding:1];
+		[menu setPosition:ccp( size.width/2, 50)];
 		
 		// Add the menu to the layer
 		[self addChild:menu];
-
 	}
 	return self;
 }
