@@ -34,6 +34,38 @@
 	return scene;
 }
 
+-(void) allTabLayersGoOffScreen
+{
+	for(TabLayer *each in tabLayers){
+		[each goOffScreen];
+	}
+}
+
+-(TabLayer*) firstLayer
+{
+	return [tabLayers objectAtIndex:0];
+}
+
+-(TabLayer*) secondLayer
+{
+	return [tabLayers objectAtIndex:1];
+}
+
+-(TabLayer*) thirdLayer
+{
+	return [tabLayers objectAtIndex:2];
+}
+
+-(TabLayer*) fourthLayer
+{
+	return [tabLayers objectAtIndex:3];
+}
+
+-(TabLayer*) fifthLayer
+{
+	return [tabLayers objectAtIndex:4];
+}
+
 // on "init" you need to initialize your instance
 -(id) init
 {
@@ -47,49 +79,52 @@
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:20];
 		
-		firstLayer = [FirstLayer layerWithColor:ccc4(0,255,0,255) width:320 height:440];
-		secondLayer = [SecondLayer layerWithColor:ccc4(0,0,255,255) width:320 height:440];
-		thirdLayer = [ThirdLayer layerWithColor:ccc4(255,0,0,255) width:320 height:440];
-		fourthLayer = [FourthLayer layerWithColor:ccc4(255,255,0,255) width:320 height:440];
-		fifthLayer = [FifthLayer layerWithColor:ccc4(0,255,255,255) width:320 height:440];
+		tabLayers = [[NSMutableArray alloc] init];
+		[tabLayers addObject:[FirstLayer layerWithColor:ccc4(0,255,0,255) width:320 height:440]];
+		[tabLayers addObject:[SecondLayer layerWithColor:ccc4(0,0,255,255) width:320 height:440]];
+		[tabLayers addObject:[ThirdLayer layerWithColor:ccc4(255,0,0,255) width:320 height:440]];
+		[tabLayers addObject:[FourthLayer layerWithColor:ccc4(255,255,0,255) width:320 height:440]];
+		[tabLayers addObject:[FifthLayer layerWithColor:ccc4(0,255,255,255) width:320 height:440]];
+
 		// Achievement Menu Item using blocks
 		CCMenuItem *first = [CCMenuItemFont itemWithString:@"[  1  ]" block:^(id sender) {
-			firstLayer.position = ccp(0,40);
-			[self addChild:firstLayer];
+			[self allTabLayersGoOffScreen];
+			[self firstLayer].position = ccp(0,40);
+			[self addChild:[self firstLayer]];
 		}
 									   ];
 
 		// Leaderboard Menu Item using blocks
 		CCMenuItem *second = [CCMenuItemFont itemWithString:@"[  2  ]" block:^(id sender) {
 						
-			
-			secondLayer.position = ccp(0,40);
-			[self addChild:secondLayer];
+			[self allTabLayersGoOffScreen];
+			[self secondLayer].position = ccp(0,40);
+			[self addChild:[self secondLayer]];
 			
 		}
 									   ];
 		
 		CCMenuItem *third = [CCMenuItemFont itemWithString:@"[  3  ]" block:^(id sender) {
 			
-			
-			thirdLayer.position = ccp(0,40);
-			[self addChild:thirdLayer];
+			[self allTabLayersGoOffScreen];
+			[self thirdLayer].position = ccp(0,40);
+			[self addChild:[self thirdLayer]];
 		}
 							 ];
 
 		CCMenuItem *fourth = [CCMenuItemFont itemWithString:@"[  4  ]" block:^(id sender) {
 			
-			
-			fourthLayer.position = ccp(0,40);
-			[self addChild:fourthLayer];
+			[self allTabLayersGoOffScreen];
+			[self fourthLayer].position = ccp(0,40);
+			[self addChild:[self fourthLayer]];
 		}
 							 ];
 		
 		CCMenuItem *fifth = [CCMenuItemFont itemWithString:@"[  5  ]" block:^(id sender) {
 			
-			
-			fifthLayer.position = ccp(0,40);
-			[self addChild:fifthLayer];
+			[self allTabLayersGoOffScreen];
+			[self fifthLayer].position = ccp(0,40);
+			[self addChild:[self fifthLayer]];
 		}
 							 ];
 

@@ -12,5 +12,5 @@
 @interface TabLayer : CCLayerColor {
     
 }
-
+-(void)goOffScreen;
 @end

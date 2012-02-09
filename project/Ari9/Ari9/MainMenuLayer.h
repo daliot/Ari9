@@ -20,12 +20,7 @@
 // HelloWorldLayer
 @interface MainMenuLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
-	FirstLayer *firstLayer;
-	SecondLayer *secondLayer;
-	ThirdLayer *thirdLayer;
-	FourthLayer *fourthLayer;
-	FifthLayer *fifthLayer;
-	
+	NSMutableArray *tabLayers;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

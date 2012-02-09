@@ -7,9 +7,9 @@
 //
 
 
-#import "cocos2d.h"
+#import "TabLayer.h"
 
-@interface SecondLayer : CCLayerColor {
+@interface SecondLayer : TabLayer {
     
 }
 
