@@ -1,16 +1,20 @@
 //
-//  SecondLayer.h
+//  TabLayer.m
 //  Ari9
 //
 //  Created by 최 민규 on 12. 2. 9..
 //  Copyright 2012 앱달. All rights reserved.
 //
 
+#import "TabLayer.h"
 
-#import "cocos2d.h"
 
-@interface SecondLayer : CCLayerColor {
-    
+@implementation TabLayer
+
+
+-(void)goOffScreen
+{
+	self.position = ccp(-320,40);
 }
 
 @end
