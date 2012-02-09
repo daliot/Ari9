@@ -54,7 +54,7 @@
 			FirstLayer *firstLayer = [FirstLayer layerWithColor:ccc4(0,255,0,255) width:320 height:480];
 			firstLayer.position = ccp(0,0);
 //			firstLayer.anchorPoint = ccp(1.0f,1.0f);
-			[firstLayer setAnchorPoint:ccp(1.0f,1.0f)].
+			[firstLayer setAnchorPoint:ccp(1.0f,1.0f)];
 			[self addChild:firstLayer];
 		}
 									   ];

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3965012014E152F500706A7F /* FirstLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3965011E14E152F500706A7F /* FirstLayer.m */; };
 		3965012114E152F500706A7F /* PaxHeader in Resources */ = {isa = PBXBuildFile; fileRef = 3965011F14E152F500706A7F /* PaxHeader */; };
+		39AB735D14E3DE2B00736BB1 /* SecondLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AB735C14E3DE2B00736BB1 /* SecondLayer.m */; };
 		ED464FA814E142A400F90334 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FA714E142A400F90334 /* QuartzCore.framework */; };
 		ED464FAA14E142A400F90334 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FA914E142A400F90334 /* OpenGLES.framework */; };
 		ED464FAC14E142A400F90334 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FAB14E142A400F90334 /* OpenAL.framework */; };
@@ -145,6 +146,8 @@
 		3965011D14E152F500706A7F /* FirstLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstLayer.h; sourceTree = "<group>"; };
 		3965011E14E152F500706A7F /* FirstLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstLayer.m; sourceTree = "<group>"; };
 		3965011F14E152F500706A7F /* PaxHeader */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PaxHeader; sourceTree = "<group>"; };
+		39AB735B14E3DE2B00736BB1 /* SecondLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondLayer.h; sourceTree = "<group>"; };
+		39AB735C14E3DE2B00736BB1 /* SecondLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondLayer.m; sourceTree = "<group>"; };
 		ED464FA314E142A400F90334 /* Ari9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ari9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED464FA714E142A400F90334 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED464FA914E142A400F90334 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -461,6 +464,8 @@
 				ED464FEB14E142A400F90334 /* libs */,
 				ED46512614E142A700F90334 /* Supporting Files */,
 				3965011F14E152F500706A7F /* PaxHeader */,
+				39AB735B14E3DE2B00736BB1 /* SecondLayer.h */,
+				39AB735C14E3DE2B00736BB1 /* SecondLayer.m */,
 			);
 			path = Ari9;
 			sourceTree = "<group>";
@@ -1006,6 +1011,7 @@
 				ED46512C14E142A700F90334 /* AppDelegate.m in Sources */,
 				ED46512F14E142A700F90334 /* MainMenuLayer.m in Sources */,
 				3965012014E152F500706A7F /* FirstLayer.m in Sources */,
+				39AB735D14E3DE2B00736BB1 /* SecondLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
