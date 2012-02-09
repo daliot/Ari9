@@ -28,7 +28,7 @@
 	MainMenuLayer *layer = [MainMenuLayer node];
 	
 	// add layer as a child to scene
-	[scene addChild: layer];
+	[scene addChild: layer z:100];
 	
 	// return the scene
 	return scene;
@@ -88,9 +88,11 @@
 
 		// Achievement Menu Item using blocks
 		CCMenuItem *first = [CCMenuItemFont itemWithString:@"[  1  ]" block:^(id sender) {
+
 			[self allTabLayersGoOffScreen];
 			[self firstLayer].position = ccp(0,40);
 			[self addChild:[self firstLayer]];
+					
 		}
 									   ];
 
