@@ -28,7 +28,7 @@
 	MainMenuLayer *layer = [MainMenuLayer node];
 	
 	// add layer as a child to scene
-	[scene addChild: layer];
+	[scene addChild: layer z:100];
 	
 	// return the scene
 	return scene;
@@ -54,8 +54,19 @@
 		fifthLayer = [FifthLayer layerWithColor:ccc4(0,255,255,255) width:320 height:440];
 		// Achievement Menu Item using blocks
 		CCMenuItem *first = [CCMenuItemFont itemWithString:@"[  1  ]" block:^(id sender) {
+<<<<<<< HEAD
 			firstLayer.position = ccp(0,40);
 			[self addChild:firstLayer];
+=======
+					
+			NSLog(@"first");
+			FirstLayer *firstLayer = [FirstLayer layerWithColor:ccc4(0,255,0,255) width:320 height:400];
+			firstLayer.position = ccp(0,80);
+//			firstLayer.anchorPoint = ccp(1.0f,1.0f);
+			[firstLayer setAnchorPoint:ccp(0.0f,0.0f)];
+			
+			[self addChild:firstLayer z:50];
+>>>>>>> 레이어 크기 조정
 		}
 									   ];
 
