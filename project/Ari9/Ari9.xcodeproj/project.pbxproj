@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3965012014E152F500706A7F /* FirstLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3965011E14E152F500706A7F /* FirstLayer.m */; };
+		3965012114E152F500706A7F /* PaxHeader in Resources */ = {isa = PBXBuildFile; fileRef = 3965011F14E152F500706A7F /* PaxHeader */; };
+		39AB735D14E3DE2B00736BB1 /* SecondLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AB735C14E3DE2B00736BB1 /* SecondLayer.m */; };
 		ED464FA814E142A400F90334 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FA714E142A400F90334 /* QuartzCore.framework */; };
 		ED464FAA14E142A400F90334 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FA914E142A400F90334 /* OpenGLES.framework */; };
 		ED464FAC14E142A400F90334 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FAB14E142A400F90334 /* OpenAL.framework */; };
@@ -136,10 +139,15 @@
 		ED46512414E142A700F90334 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = ED46512314E142A700F90334 /* vec4.c */; };
 		ED46512914E142A700F90334 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46512814E142A700F90334 /* main.m */; };
 		ED46512C14E142A700F90334 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46512B14E142A700F90334 /* AppDelegate.m */; };
-		ED46512F14E142A700F90334 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46512E14E142A700F90334 /* HelloWorldLayer.m */; };
+		ED46512F14E142A700F90334 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46512E14E142A700F90334 /* MainMenuLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3965011D14E152F500706A7F /* FirstLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstLayer.h; sourceTree = "<group>"; };
+		3965011E14E152F500706A7F /* FirstLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstLayer.m; sourceTree = "<group>"; };
+		3965011F14E152F500706A7F /* PaxHeader */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PaxHeader; sourceTree = "<group>"; };
+		39AB735B14E3DE2B00736BB1 /* SecondLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondLayer.h; sourceTree = "<group>"; };
+		39AB735C14E3DE2B00736BB1 /* SecondLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondLayer.m; sourceTree = "<group>"; };
 		ED464FA314E142A400F90334 /* Ari9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ari9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED464FA714E142A400F90334 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED464FA914E142A400F90334 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -385,8 +393,8 @@
 		ED46512814E142A700F90334 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED46512A14E142A700F90334 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ED46512B14E142A700F90334 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		ED46512D14E142A700F90334 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		ED46512E14E142A700F90334 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		ED46512D14E142A700F90334 /* MainMenuLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
+		ED46512E14E142A700F90334 /* MainMenuLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,12 +455,17 @@
 			children = (
 				ED46512A14E142A700F90334 /* AppDelegate.h */,
 				ED46512B14E142A700F90334 /* AppDelegate.m */,
-				ED46512D14E142A700F90334 /* HelloWorldLayer.h */,
-				ED46512E14E142A700F90334 /* HelloWorldLayer.m */,
+				ED46512D14E142A700F90334 /* MainMenuLayer.h */,
+				ED46512E14E142A700F90334 /* MainMenuLayer.m */,
+				3965011D14E152F500706A7F /* FirstLayer.h */,
+				3965011E14E152F500706A7F /* FirstLayer.m */,
 				ED464FBA14E142A400F90334 /* Resources */,
 				ED464FD014E142A400F90334 /* Shaders */,
 				ED464FEB14E142A400F90334 /* libs */,
 				ED46512614E142A700F90334 /* Supporting Files */,
+				3965011F14E152F500706A7F /* PaxHeader */,
+				39AB735B14E3DE2B00736BB1 /* SecondLayer.h */,
+				39AB735C14E3DE2B00736BB1 /* SecondLayer.m */,
 			);
 			path = Ari9;
 			sourceTree = "<group>";
@@ -889,6 +902,7 @@
 				ED464FE814E142A400F90334 /* PositionTextureColor.vsh in Resources */,
 				ED464FEA14E142A400F90334 /* PositionTextureColorAlphaTest.fsh in Resources */,
 				ED46510A14E142A700F90334 /* ChangeLog in Resources */,
+				3965012114E152F500706A7F /* PaxHeader in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,7 +1009,9 @@
 				ED46512414E142A700F90334 /* vec4.c in Sources */,
 				ED46512914E142A700F90334 /* main.m in Sources */,
 				ED46512C14E142A700F90334 /* AppDelegate.m in Sources */,
-				ED46512F14E142A700F90334 /* HelloWorldLayer.m in Sources */,
+				ED46512F14E142A700F90334 /* MainMenuLayer.m in Sources */,
+				3965012014E152F500706A7F /* FirstLayer.m in Sources */,
+				39AB735D14E3DE2B00736BB1 /* SecondLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1093,6 +1109,7 @@
 				ED46513414E142A700F90334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
