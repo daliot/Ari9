@@ -47,14 +47,14 @@
 		// Default font size will be 28 points.
 		[CCMenuItemFont setFontSize:20];
 		
+		firstLayer = [FirstLayer layerWithColor:ccc4(0,255,0,255) width:320 height:440];
+		secondLayer = [SecondLayer layerWithColor:ccc4(0,0,255,255) width:320 height:440];
+		thirdLayer = [ThirdLayer layerWithColor:ccc4(255,0,0,255) width:320 height:440];
+		fourthLayer = [FourthLayer layerWithColor:ccc4(255,255,0,255) width:320 height:440];
+		fifthLayer = [FifthLayer layerWithColor:ccc4(0,255,255,255) width:320 height:440];
 		// Achievement Menu Item using blocks
 		CCMenuItem *first = [CCMenuItemFont itemWithString:@"[  1  ]" block:^(id sender) {
-					
-			NSLog(@"first");
-			FirstLayer *firstLayer = [FirstLayer layerWithColor:ccc4(0,255,0,255) width:320 height:480];
-			firstLayer.position = ccp(0,0);
-//			firstLayer.anchorPoint = ccp(1.0f,1.0f);
-			[firstLayer setAnchorPoint:ccp(1.0f,1.0f)];
+			firstLayer.position = ccp(0,40);
 			[self addChild:firstLayer];
 		}
 									   ];
@@ -62,25 +62,34 @@
 		// Leaderboard Menu Item using blocks
 		CCMenuItem *second = [CCMenuItemFont itemWithString:@"[  2  ]" block:^(id sender) {
 						
-			NSLog(@"second");
+			
+			secondLayer.position = ccp(0,40);
+			[self addChild:secondLayer];
+			
 		}
 									   ];
 		
 		CCMenuItem *third = [CCMenuItemFont itemWithString:@"[  3  ]" block:^(id sender) {
 			
-			NSLog(@"third");
+			
+			thirdLayer.position = ccp(0,40);
+			[self addChild:thirdLayer];
 		}
 							 ];
 
 		CCMenuItem *fourth = [CCMenuItemFont itemWithString:@"[  4  ]" block:^(id sender) {
 			
-			NSLog(@"fourth");
+			
+			fourthLayer.position = ccp(0,40);
+			[self addChild:fourthLayer];
 		}
 							 ];
 		
 		CCMenuItem *fifth = [CCMenuItemFont itemWithString:@"[  5  ]" block:^(id sender) {
 			
-			NSLog(@"fifth");
+			
+			fifthLayer.position = ccp(0,40);
+			[self addChild:fifthLayer];
 		}
 							 ];
 
@@ -89,13 +98,14 @@
 		CCMenu *menu = [CCMenu menuWithItems:first, second,third,fourth,fifth, nil];
 		[menu setColor:ccGRAY];
 		[menu alignItemsHorizontallyWithPadding:1];
-		[menu setPosition:ccp( size.width/2, 50)];
+		[menu setPosition:ccp( size.width/2, 10)];
 		
 		// Add the menu to the layer
 		[self addChild:menu];
 	}
 	return self;
 }
+
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc

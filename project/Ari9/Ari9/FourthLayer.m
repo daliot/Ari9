@@ -1,15 +1,15 @@
 //
-//  FirstLayer.m
+//  FourthLayer.m
 //  Ari9
 //
-//  Created by 최 민규 on 12. 2. 7..
+//  Created by 최 민규 on 12. 2. 9..
 //  Copyright 2012 앱달. All rights reserved.
 //
 
-#import "FirstLayer.h"
+#import "FourthLayer.h"
 
 
-@implementation FirstLayer
+@implementation FourthLayer
 
 -(id) init
 {
@@ -18,8 +18,10 @@
 	if( (self=[super init])) {
 		
 		NSLog(@"first Layer 생성");
+		
 	}
 	return self;
 }
+
 
 @end
