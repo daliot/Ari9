@@ -139,6 +139,8 @@
 		
 		// Add the menu to the layer
 		[self addChild:menu];
+		
+		[self setProbedNode: second];
 	}
 	return self;
 }

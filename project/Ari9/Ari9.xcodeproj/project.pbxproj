@@ -144,6 +144,9 @@
 		ED46512914E142A700F90334 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46512814E142A700F90334 /* main.m */; };
 		ED46512C14E142A700F90334 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46512B14E142A700F90334 /* AppDelegate.m */; };
 		ED46512F14E142A700F90334 /* MainMenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46512E14E142A700F90334 /* MainMenuLayer.m */; };
+		ED7BE56114EA335600C28E70 /* NodePositionProbingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE55C14EA335600C28E70 /* NodePositionProbingLayer.m */; };
+		ED7BE56214EA335600C28E70 /* NodeProbingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE55E14EA335600C28E70 /* NodeProbingLayer.m */; };
+		ED7BE56314EA335600C28E70 /* NodeScaleProbingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE56014EA335600C28E70 /* NodeScaleProbingLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -407,6 +410,12 @@
 		ED46512B14E142A700F90334 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ED46512D14E142A700F90334 /* MainMenuLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuLayer.h; sourceTree = "<group>"; };
 		ED46512E14E142A700F90334 /* MainMenuLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuLayer.m; sourceTree = "<group>"; };
+		ED7BE55B14EA335600C28E70 /* NodePositionProbingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodePositionProbingLayer.h; sourceTree = "<group>"; };
+		ED7BE55C14EA335600C28E70 /* NodePositionProbingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodePositionProbingLayer.m; sourceTree = "<group>"; };
+		ED7BE55D14EA335600C28E70 /* NodeProbingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeProbingLayer.h; sourceTree = "<group>"; };
+		ED7BE55E14EA335600C28E70 /* NodeProbingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeProbingLayer.m; sourceTree = "<group>"; };
+		ED7BE55F14EA335600C28E70 /* NodeScaleProbingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeScaleProbingLayer.h; sourceTree = "<group>"; };
+		ED7BE56014EA335600C28E70 /* NodeScaleProbingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeScaleProbingLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -484,6 +493,7 @@
 		ED464FB914E142A400F90334 /* Ari9 */ = {
 			isa = PBXGroup;
 			children = (
+				ED8A616514EA305B00BA7E84 /* Probling Layer */,
 				ED46512A14E142A700F90334 /* AppDelegate.h */,
 				ED46512B14E142A700F90334 /* AppDelegate.m */,
 				ED46512D14E142A700F90334 /* MainMenuLayer.h */,
@@ -855,6 +865,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ED8A616514EA305B00BA7E84 /* Probling Layer */ = {
+			isa = PBXGroup;
+			children = (
+				ED7BE55B14EA335600C28E70 /* NodePositionProbingLayer.h */,
+				ED7BE55C14EA335600C28E70 /* NodePositionProbingLayer.m */,
+				ED7BE55D14EA335600C28E70 /* NodeProbingLayer.h */,
+				ED7BE55E14EA335600C28E70 /* NodeProbingLayer.m */,
+				ED7BE55F14EA335600C28E70 /* NodeScaleProbingLayer.h */,
+				ED7BE56014EA335600C28E70 /* NodeScaleProbingLayer.m */,
+			);
+			name = "Probling Layer";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1044,6 +1067,9 @@
 				39AB736C14E3E58D00736BB1 /* FourthLayer.m in Sources */,
 				39AB736F14E3E59A00736BB1 /* FifthLayer.m in Sources */,
 				39AB737214E3E7CE00736BB1 /* TabLayer.m in Sources */,
+				ED7BE56114EA335600C28E70 /* NodePositionProbingLayer.m in Sources */,
+				ED7BE56214EA335600C28E70 /* NodeProbingLayer.m in Sources */,
+				ED7BE56314EA335600C28E70 /* NodeScaleProbingLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
