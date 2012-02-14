@@ -17,7 +17,14 @@
 		// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	NSLog(@"111111111");
+	
+	
+	
+	
+	
 	if( (self = [super initWithColor:color width:w height:h])) {
+		
+		verticalTabsLayer = [CCLayerColor layerWithColor: ccc4(100, 100, 100, 100) width:100 height:440];
 		
 		CCMenuItem *first = [CCMenuItemFont itemWithString:@"[  1  ]" block:^(id sender) {
 			
@@ -72,7 +79,8 @@
 		[menu setColor:ccRED];
 		
 		// Add the menu to the layer
-		[self addChild:menu];
+		[verticalTabsLayer addChild:menu];
+		[self addChild:verticalTabsLayer];
 	}
 	return self;
 }

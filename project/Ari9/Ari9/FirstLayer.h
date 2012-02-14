@@ -10,7 +10,7 @@
 
 
 @interface FirstLayer : TabLayer {
-    
+    CCLayerColor *verticalTabsLayer;
 }
 
 @end
