@@ -18,7 +18,7 @@
 #import "FifthLayer.h"
 
 // HelloWorldLayer
-@interface MainMenuLayer : NodePositionProbingLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface MainMenuLayer : CCLayerColor <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
 	NSMutableArray *tabLayers;
 }

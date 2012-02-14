@@ -91,7 +91,7 @@
 
 			[self allTabLayersGoOffScreen];
 			[self firstLayer].position = ccp(0,40);
-			[self addChild:[self firstLayer]];
+
 					
 		}
 									   ];
@@ -101,7 +101,7 @@
 						
 			[self allTabLayersGoOffScreen];
 			[self secondLayer].position = ccp(0,40);
-			[self addChild:[self secondLayer]];
+
 			
 		}
 									   ];
@@ -110,7 +110,7 @@
 			
 			[self allTabLayersGoOffScreen];
 			[self thirdLayer].position = ccp(0,40);
-			[self addChild:[self thirdLayer]];
+
 		}
 							 ];
 
@@ -118,7 +118,7 @@
 			
 			[self allTabLayersGoOffScreen];
 			[self fourthLayer].position = ccp(0,40);
-			[self addChild:[self fourthLayer]];
+
 		}
 							 ];
 		
@@ -126,11 +126,17 @@
 			
 			[self allTabLayersGoOffScreen];
 			[self fifthLayer].position = ccp(0,40);
-			[self addChild:[self fifthLayer]];
+
 		}
 							 ];
 
-
+		[self addChild:[self fifthLayer]];
+		[self addChild:[self fourthLayer]];
+		[self addChild:[self thirdLayer]];
+		[self addChild:[self secondLayer]];
+		[self addChild:[self firstLayer]];
+		[self allTabLayersGoOffScreen];
+		
 		
 		CCMenu *menu = [CCMenu menuWithItems:first, second,third,fourth,fifth, nil];
 		[menu setColor:ccGRAY];
@@ -139,8 +145,6 @@
 		
 		// Add the menu to the layer
 		[self addChild:menu];
-		
-		[self setProbedNode: second];
 	}
 	return self;
 }
