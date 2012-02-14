@@ -19,7 +19,6 @@
 -(void) setProbedNode:(CCNode*)aNode;
 {
 	NSAssert(aNode.parent != nil, @"보이지 않는 스프라이트");
-	//NSAssert(aNode.visible == YES, @"보이지 않는 스프라이트");
 	
 	if(probedNode != aNode){
 		[probedNode release];
@@ -45,9 +44,9 @@
 	UITouch *touch = [touches anyObject];
 	CGPoint currentPoint = [touch locationInView: touch.view];
 	
-//	CGFloat tdx = currentPoint.x - touchBeginPosition.x;
-//	CGFloat tdy = currentPoint.y - touchBeginPosition.y;
-	[self probeWithTouchDisplacement: CGPointMake(currentPoint.x - touchBeginPosition.x, currentPoint.y - touchBeginPosition.y)];
+	CGFloat tdx = currentPoint.x - touchBeginPosition.x;
+	CGFloat tdy = currentPoint.y - touchBeginPosition.y;
+	[self probeWithTouchDisplacement: CGPointMake(tdx, tdy)];
 }	
 
 
