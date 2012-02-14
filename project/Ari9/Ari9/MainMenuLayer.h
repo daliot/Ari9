@@ -10,7 +10,7 @@
 #import <GameKit/GameKit.h>
 
 // When you import this file, you import all the cocos2d classes
-#import "cocos2d.h"
+#import "NodePositionProbingLayer.h"
 #import "FirstLayer.h"
 #import "SecondLayer.h"
 #import "ThirdLayer.h"
@@ -18,7 +18,7 @@
 #import "FifthLayer.h"
 
 // HelloWorldLayer
-@interface MainMenuLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface MainMenuLayer : NodePositionProbingLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
 	NSMutableArray *tabLayers;
 }
