@@ -28,6 +28,8 @@
 		
 		CCMenuItem *first = [CCMenuItemFont itemWithString:@"[  1  ]" block:^(id sender) {
 			
+			[APPDAL switch_CocosViewToUIView];
+			
 			//[self allTabLayersGoOffScreen];
 			//[self firstLayer].position = ccp(0,40);
 			//[self addChild:[self firstLayer]];

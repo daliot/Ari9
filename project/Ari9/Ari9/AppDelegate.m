@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "MainMenuLayer.h"
 
+
 @implementation AppController
 
 @synthesize window=window_, navController=navController_, director=director_;
@@ -57,10 +58,16 @@
 	// Create a Navigation Controller with the Director
 	navController_ = [[UINavigationController alloc] initWithRootViewController:director_];
 	navController_.navigationBarHidden = YES;
-
-	// set the Navigation Controller as the root view controller
-//	[window_ setRootViewController:rootViewController_];
+//
+//	// set the Navigation Controller as the root view controller
+////	[window_ setRootViewController:rootViewController_];
 	[window_ addSubview:navController_.view];
+	
+	UIKitView = [[MainUIKitView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
+	[window_ addSubview:UIKitView];
+	//[UIKitView release];
+	
+	
 
 	// make main window visible
 	[window_ makeKeyAndVisible];
@@ -79,10 +86,18 @@
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 
 	// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
-	[director_ pushScene: [MainMenuLayer scene]]; 
-
-
+	[director_ pushScene: [MainMenuLayer scene]];
 	return YES;
+}
+
+-(void)switch_UIViewToCocosView
+{		
+	[window_ bringSubviewToFront:navController_.view];
+}
+
+-(void)switch_CocosViewToUIView
+{
+	[window_ bringSubviewToFront:UIKitView];
 }
 
 // Supported orientations: Landscape. Customize it for your own needs
