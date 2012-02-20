@@ -7,6 +7,9 @@
 //
 
 #import "MainUIKitView.h"
+#import "VerticalTabView.h"
+
+
 
 @implementation MainUIKitView
 
@@ -35,7 +38,35 @@
 		[self addSubview:bottomTab];
 		
 		bottomTab.delegate = self;	
-    }
+		
+		
+		VerticalTabView *aTabView;
+		
+		tabView0 = [VerticalTabView createTabView:0];
+		aTabView = tabView0;
+		[self addSubview:aTabView];
+		[aTabView release];
+		
+		tabView1 = [VerticalTabView createTabView:1];
+		aTabView = tabView1;
+		[self addSubview:aTabView];
+		[aTabView release];
+		
+		tabView2 = [VerticalTabView createTabView:2];
+		aTabView = tabView2;
+		[self addSubview:aTabView];
+		[aTabView release];
+		
+		tabView3 = [VerticalTabView createTabView:3];
+		aTabView = tabView3;
+		[self addSubview:aTabView];
+		[aTabView release];
+		
+		tabView4 = [VerticalTabView createTabView:4];
+		aTabView = tabView4;
+		[self addSubview:aTabView];
+		[aTabView release];
+	}
     return self;
 }
 
@@ -43,23 +74,23 @@
 {
 	switch (item.tag) {
 		case 0:
-			[self setBackgroundColor:[UIColor yellowColor]];
+			[self bringSubviewToFront:tabView0];
 			break;
 			
 		case 1:
-			[self setBackgroundColor:[UIColor redColor]];
+			[self bringSubviewToFront:tabView1];
 			break;
 			
 		case 2:
-			[self setBackgroundColor:[UIColor blueColor]];
+			[self bringSubviewToFront:tabView2];
 			break;
 			
 		case 3:
-			[self setBackgroundColor:[UIColor grayColor]];
+			[self bringSubviewToFront:tabView3];
 			break;
 			
 		case 4:
-			[self setBackgroundColor:[UIColor magentaColor]];
+			[self bringSubviewToFront:tabView4];
 			break;
 	}
 }

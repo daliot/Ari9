@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class VerticalTabView;
 
 @interface MainUIKitView : UIView<UITabBarDelegate>
-
+{
+	VerticalTabView *tabView0;
+	VerticalTabView *tabView1;
+	VerticalTabView *tabView2;
+	VerticalTabView *tabView3;
+	VerticalTabView *tabView4;
+}
 @end
