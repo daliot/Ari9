@@ -12,6 +12,26 @@
 
 @implementation VerticalTabView
 
+-(void) showVerticalTab
+{
+	if(verticalTabShown==YES) return;
+	[UIView animateWithDuration:1.5 animations:^{
+		CGRect fr = verticalTab.frame;
+		fr.origin.x = 0;
+		verticalTab.frame = fr;
+	}];	
+}
+
+-(void) hideVerticalTab
+{
+	if(verticalTabShown==NO) return;
+	[UIView animateWithDuration:1.5 animations:^{
+		CGRect fr = verticalTab.frame;
+		fr.origin.x = -fr.size.width;
+		verticalTab.frame = fr;
+	}];
+}
+
 +(VerticalTabView*)createTabView:(int)tag 
 {
 	VerticalTabView *tempView = [[VerticalTabView alloc]initWithFrame: LAYOUT_CONTENTS_FULL];  
@@ -46,6 +66,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+		verticalTabShown = YES;
 		verticalTab = [[VerticalTab alloc] initWithFrame:LAYOUT_LEFTSIDE];
 		[verticalTab setBackgroundColor:[UIColor whiteColor]];
 		[self addSubview:verticalTab];
@@ -53,6 +74,8 @@
 		contentsTableView = [[ContentsTableView alloc] initWithFrame:LAYOUT_CONTENTS_SIDE];
 		[self addSubview:contentsTableView];
 		[contentsTableView release];
+		
+		[self hideVerticalTab];
     }
     return self;
 }

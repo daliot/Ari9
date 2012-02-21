@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContentsTableView : UIView
+@interface ContentsTableView : UITableView<UITableViewDelegate,UITableViewDataSource>
 
 @end

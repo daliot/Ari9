@@ -15,8 +15,10 @@
 {
 	VerticalTab *verticalTab;
 	ContentsTableView *contentsTableView;
+	BOOL verticalTabShown;
 }
-
+-(void) showVerticalTab;
+-(void) hideVerticalTab;
 +(VerticalTabView*)createTabView:(int)tag;
 -(void) setMyColor;
 -(void) addTabButton:(UIImage*)image title:(NSString*)title;
