@@ -18,6 +18,7 @@
 		D3C9E9B914F2702100F80A36 /* VerticalTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C9E9B814F2702100F80A36 /* VerticalTabView.m */; };
 		D3C9E9BD14F2730300F80A36 /* VerticalTab.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C9E9BC14F2730300F80A36 /* VerticalTab.m */; };
 		D3C9E9C014F2732000F80A36 /* ContentsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C9E9BF14F2732000F80A36 /* ContentsTableView.m */; };
+		ED112CEE14F3B4740013DCAD /* ViewFramingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED112CED14F3B4740013DCAD /* ViewFramingWindow.m */; };
 		ED464FA814E142A400F90334 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FA714E142A400F90334 /* QuartzCore.framework */; };
 		ED464FAA14E142A400F90334 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FA914E142A400F90334 /* OpenGLES.framework */; };
 		ED464FAC14E142A400F90334 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FAB14E142A400F90334 /* OpenAL.framework */; };
@@ -176,6 +177,8 @@
 		D3C9E9BE14F2732000F80A36 /* ContentsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentsTableView.h; sourceTree = "<group>"; };
 		D3C9E9BF14F2732000F80A36 /* ContentsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentsTableView.m; sourceTree = "<group>"; };
 		D3C9E9C114F275EE00F80A36 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
+		ED112CEC14F3B4740013DCAD /* ViewFramingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFramingWindow.h; sourceTree = "<group>"; };
+		ED112CED14F3B4740013DCAD /* ViewFramingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFramingWindow.m; sourceTree = "<group>"; };
 		ED464FA314E142A400F90334 /* Ari9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ari9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED464FA714E142A400F90334 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED464FA914E142A400F90334 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -890,6 +893,8 @@
 		ED8A616514EA305B00BA7E84 /* Probling Layer */ = {
 			isa = PBXGroup;
 			children = (
+				ED112CEC14F3B4740013DCAD /* ViewFramingWindow.h */,
+				ED112CED14F3B4740013DCAD /* ViewFramingWindow.m */,
 				ED7BE55B14EA335600C28E70 /* NodePositionProbingLayer.h */,
 				ED7BE55C14EA335600C28E70 /* NodePositionProbingLayer.m */,
 				ED7BE55D14EA335600C28E70 /* NodeProbingLayer.h */,
@@ -1096,6 +1101,7 @@
 				D3C9E9B914F2702100F80A36 /* VerticalTabView.m in Sources */,
 				D3C9E9BD14F2730300F80A36 /* VerticalTab.m in Sources */,
 				D3C9E9C014F2732000F80A36 /* ContentsTableView.m in Sources */,
+				ED112CEE14F3B4740013DCAD /* ViewFramingWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

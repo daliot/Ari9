@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VerticalTab : UIView
+@interface VerticalTab : UIView{
+	NSMutableArray *tabButtons;
+}
 
 @end

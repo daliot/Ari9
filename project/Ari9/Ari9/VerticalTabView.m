@@ -15,20 +15,35 @@
 -(void) showVerticalTab
 {
 	if(verticalTabShown==YES) return;
+	verticalTabShown=YES;
 	[UIView animateWithDuration:1.5 animations:^{
 		CGRect fr = verticalTab.frame;
 		fr.origin.x = 0;
 		verticalTab.frame = fr;
+		
+		
+		CGRect ctfr = contentsTableView.frame;
+		ctfr.origin.x = fr.origin.x + fr.size.width;
+		ctfr.size.width = 320-ctfr.origin.x;
+		contentsTableView.frame = ctfr;
 	}];	
 }
 
 -(void) hideVerticalTab
 {
 	if(verticalTabShown==NO) return;
-	[UIView animateWithDuration:1.5 animations:^{
+	verticalTabShown=NO;
+	[UIView animateWithDuration:1.5 animations: ^{
+
 		CGRect fr = verticalTab.frame;
 		fr.origin.x = -fr.size.width;
 		verticalTab.frame = fr;
+		
+		
+		CGRect ctfr = contentsTableView.frame;
+		ctfr.origin.x = fr.origin.x + fr.size.width;
+		ctfr.size.width = 320-ctfr.origin.x;
+		contentsTableView.frame = ctfr;
 	}];
 }
 
@@ -74,8 +89,6 @@
 		contentsTableView = [[ContentsTableView alloc] initWithFrame:LAYOUT_CONTENTS_SIDE];
 		[self addSubview:contentsTableView];
 		[contentsTableView release];
-		
-		[self hideVerticalTab];
     }
     return self;
 }

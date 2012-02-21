@@ -7,14 +7,34 @@
 //
 
 #import "VerticalTab.h"
+#import "ViewFramingWindow.h"
 
 @implementation VerticalTab
+
+-(void) addTabButton
+{
+	UIButton *bt = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	CGFloat btFrameY;
+	if([tabButtons count]==0) btFrameY = 0;
+	else {
+		btFrameY = CGRectGetMaxY(((UIButton*)[tabButtons lastObject]).frame);
+	}
+	bt.frame = CGRectMake(0, btFrameY, self.frame.size.width, 81);
+	[self addSubview: bt];
+	[tabButtons addObject: bt];
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+		tabButtons = [[NSMutableArray alloc] init];
+		[self addTabButton];
+		[self addTabButton];
+		[self addTabButton];
+		[self addTabButton];
+		[self addTabButton];
     }
     return self;
 }
