@@ -19,6 +19,8 @@
 		D3C9E9BD14F2730300F80A36 /* VerticalTab.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C9E9BC14F2730300F80A36 /* VerticalTab.m */; };
 		D3C9E9C014F2732000F80A36 /* ContentsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C9E9BF14F2732000F80A36 /* ContentsTableView.m */; };
 		ED112CEE14F3B4740013DCAD /* ViewFramingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ED112CED14F3B4740013DCAD /* ViewFramingWindow.m */; };
+		ED112CF514F3C37D0013DCAD /* jsonData.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED112CF414F3C37D0013DCAD /* jsonData.plist */; };
+		ED112CF714F3CB230013DCAD /* mainData.json in Resources */ = {isa = PBXBuildFile; fileRef = ED112CF614F3CB230013DCAD /* mainData.json */; };
 		ED464FA814E142A400F90334 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FA714E142A400F90334 /* QuartzCore.framework */; };
 		ED464FAA14E142A400F90334 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FA914E142A400F90334 /* OpenGLES.framework */; };
 		ED464FAC14E142A400F90334 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FAB14E142A400F90334 /* OpenAL.framework */; };
@@ -179,6 +181,8 @@
 		D3C9E9C114F275EE00F80A36 /* global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
 		ED112CEC14F3B4740013DCAD /* ViewFramingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFramingWindow.h; sourceTree = "<group>"; };
 		ED112CED14F3B4740013DCAD /* ViewFramingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFramingWindow.m; sourceTree = "<group>"; };
+		ED112CF414F3C37D0013DCAD /* jsonData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jsonData.plist; sourceTree = "<group>"; };
+		ED112CF614F3CB230013DCAD /* mainData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mainData.json; sourceTree = "<group>"; };
 		ED464FA314E142A400F90334 /* Ari9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ari9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED464FA714E142A400F90334 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ED464FA914E142A400F90334 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -547,6 +551,8 @@
 				ED464FCB14E142A400F90334 /* Icon@2x.png */,
 				ED464FCD14E142A400F90334 /* Info.plist */,
 				ED464FCE14E142A400F90334 /* iTunesArtwork */,
+				ED112CF414F3C37D0013DCAD /* jsonData.plist */,
+				ED112CF614F3CB230013DCAD /* mainData.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -981,6 +987,8 @@
 				ED464FEA14E142A400F90334 /* PositionTextureColorAlphaTest.fsh in Resources */,
 				ED46510A14E142A700F90334 /* ChangeLog in Resources */,
 				3965012114E152F500706A7F /* PaxHeader in Resources */,
+				ED112CF514F3C37D0013DCAD /* jsonData.plist in Resources */,
+				ED112CF714F3CB230013DCAD /* mainData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

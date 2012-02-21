@@ -86,6 +86,12 @@
 		[verticalTab setBackgroundColor:[UIColor whiteColor]];
 		[self addSubview:verticalTab];
 		[verticalTab release];
+		
+		[verticalTab addTabButton:@"건물"];
+		[verticalTab addTabButton:@"아이템"];
+		[verticalTab addTabButton:@"히어로"];
+		[verticalTab addTabButton:@"좀비"];
+
 		contentsTableView = [[ContentsTableView alloc] initWithFrame:LAYOUT_CONTENTS_SIDE];
 		[self addSubview:contentsTableView];
 		[contentsTableView release];

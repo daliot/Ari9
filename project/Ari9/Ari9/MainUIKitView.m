@@ -17,6 +17,16 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+		
+		NSString *mainDataPath = [[NSBundle mainBundle] pathForResource:@"jsonData" ofType:@"plist"];
+		NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile: mainDataPath];
+		mainData = [[dataDic objectForKey:@"data"] retain];
+		
+		NSError *error = nil;
+		NSString *dataString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:mainData options:NSJSONWritingPrettyPrinted error:&error] encoding:NSUTF8StringEncoding];
+		NSLog(@"mainData json[%@]", dataString);
+		
+		
 		[self setBackgroundColor:[UIColor whiteColor]];
 		
 		UIButton *switchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -24,7 +34,7 @@
 		[switchButton addTarget:APPDAL action:@selector(switch_UIViewToCocosView) forControlEvents:UIControlEventTouchDown];
 		[self addSubview:switchButton];
 		
-		UITabBarItem *firstTab = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:0];
+		UITabBarItem *firstTab = [[UITabBarItem alloc] initWithTitle: @"upgrade" image: [UIImage imageNamed:@"Icon"] tag:0];
 		UITabBarItem *secondTab = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
 		UITabBarItem *thirdTab = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:2];
 		UITabBarItem *fourthTab = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:3];

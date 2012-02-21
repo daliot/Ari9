@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>data</key>
+	<array>
+		<dict>
+			<key>수직탭바</key>
+			<array>
+				<dict>
+					<key>타이틀</key>
+					<string>건물</string>
+					<key>table items</key>
+					<array>
+						<dict>
+							<key>턴 당 생산량</key>
+							<string></string>
+							<key>가격</key>
+							<string></string>
+							<key>이름</key>
+							<string>거친 밭</string>
+						</dict>
+						<dict>
+							<key>공격력</key>
+							<string>7</string>
+							<key>공격속성</key>
+							<string>약한 레인지</string>
+							<key>사정거리</key>
+							<string>400</string>
+							<key>가격</key>
+							<string>200</string>
+							<key>이름</key>
+							<string>화살 포탑</string>
+						</dict>
+						<dict>
+							<key>공격력</key>
+							<string>30</string>
+							<key>공격속성</key>
+							<string>시즈 레인지</string>
+							<key>사정거리</key>
+							<string>500</string>
+							<key>가격</key>
+							<string>600</string>
+							<key>이름</key>
+							<string>캐논 포탑</string>
+						</dict>
+						<dict>
+							<key>공격력</key>
+							<string>9</string>
+							<key>공격속성</key>
+							<string>약한 레인지</string>
+							<key>사정거리</key>
+							<string>20000</string>
+							<key>가격</key>
+							<string>1000</string>
+							<key>이름</key>
+							<string>레이저 포탑</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>타이틀</key>
+					<string>영웅</string>
+					<key>table items</key>
+					<array>
+						<dict>
+							<key>초기 체력</key>
+							<string>20</string>
+							<key>초기 공격력</key>
+							<string>5</string>
+							<key>공격 타입</key>
+							<string>밀리</string>
+							<key>가격</key>
+							<string>1</string>
+							<key>이름</key>
+							<string>고양이</string>
+						</dict>
+						<dict>
+							<key>초기 체력</key>
+							<string>30</string>
+							<key>초기 공격력</key>
+							<string>6</string>
+							<key>공격 타입</key>
+							<string>밀리</string>
+							<key>가격</key>
+							<string>2</string>
+							<key>이름</key>
+							<string>닭</string>
+						</dict>
+						<dict>
+							<key>초기 체력</key>
+							<string>25</string>
+							<key>초기 공격력</key>
+							<string>10</string>
+							<key>공격 타입</key>
+							<string>밀리</string>
+							<key>가격</key>
+							<string>3</string>
+							<key>이름</key>
+							<string>여우</string>
+						</dict>
+						<dict>
+							<key>초기 체력</key>
+							<string>70</string>
+							<key>초기 공격력</key>
+							<string>3</string>
+							<key>공격 타입</key>
+							<string>밀리</string>
+							<key>가격</key>
+							<string>2</string>
+							<key>이름</key>
+							<string>돼지</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>타이틀</key>
+					<string>좀비</string>
+					<key>table items</key>
+					<array>
+						<dict>
+							<key>초기 체력</key>
+							<string>200</string>
+							<key>초기 공격력</key>
+							<string>1</string>
+							<key>공격 타입</key>
+							<string>밀리</string>
+							<key>가격</key>
+							<string>1</string>
+							<key>이름</key>
+							<string>칼 좀비</string>
+						</dict>
+						<dict>
+							<key>초기 체력</key>
+							<string>300</string>
+							<key>초기 공격력</key>
+							<string>1</string>
+							<key>공격 타입</key>
+							<string>밀리</string>
+							<key>가격</key>
+							<string>2</string>
+							<key>이름</key>
+							<string>총 좀비</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>타이틀</key>
+					<string>아이템</string>
+					<key>table items</key>
+					<array>
+						<dict>
+							<key>효능 종류</key>
+							<string>방어력</string>
+							<key>효능량</key>
+							<string>5</string>
+							<key>가격</key>
+							<string>100</string>
+							<key>이름</key>
+							<string>미스릴 장갑</string>
+						</dict>
+						<dict>
+							<key>효능 종류</key>
+							<string>공격력</string>
+							<key>효능량</key>
+							<string>6</string>
+							<key>가격</key>
+							<string>80</string>
+							<key>이름</key>
+							<string>초월의 검</string>
+						</dict>
+						<dict>
+							<key>효능 종류</key>
+							<string>마나증가속도</string>
+							<key>효능량</key>
+							<string>2</string>
+							<key>가격</key>
+							<string>150</string>
+							<key>이름</key>
+							<string>재능의 반지</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>타이틀</key>
+			<string>업그레드</string>
+		</dict>
+		<dict/>
+		<dict/>
+	</array>
+</dict>
+</plist>

@@ -11,9 +11,10 @@
 
 @implementation VerticalTab
 
--(void) addTabButton
+-(void) addTabButton:(NSString*)titleString
 {
 	UIButton *bt = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[bt setTitle:titleString forState:UIControlStateNormal];
 	CGFloat btFrameY;
 	if([tabButtons count]==0) btFrameY = 0;
 	else {
@@ -30,11 +31,6 @@
     if (self) {
         // Initialization code
 		tabButtons = [[NSMutableArray alloc] init];
-		[self addTabButton];
-		[self addTabButton];
-		[self addTabButton];
-		[self addTabButton];
-		[self addTabButton];
     }
     return self;
 }
