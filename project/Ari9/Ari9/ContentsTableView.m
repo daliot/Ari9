@@ -29,14 +29,13 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-	
-	cell.textLabel.text = @"ari";
+	cell.textLabel.text = [NSString stringWithFormat:@"%@", [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:0 verticalTabIndex:0 rowIndex:indexPath.row]];
 
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 4;
+	return [[BigBigDataStore sharedInstance] countOfTableViewCellDataAtTabIndex:0 verticalTabIndex:0];
 }
 
 /*

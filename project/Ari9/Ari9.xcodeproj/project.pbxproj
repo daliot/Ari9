@@ -154,6 +154,7 @@
 		ED7BE56114EA335600C28E70 /* NodePositionProbingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE55C14EA335600C28E70 /* NodePositionProbingLayer.m */; };
 		ED7BE56214EA335600C28E70 /* NodeProbingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE55E14EA335600C28E70 /* NodeProbingLayer.m */; };
 		ED7BE56314EA335600C28E70 /* NodeScaleProbingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE56014EA335600C28E70 /* NodeScaleProbingLayer.m */; };
+		EDA4B35314F65590006BF550 /* BigBigDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA4B35214F65590006BF550 /* BigBigDataStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -436,6 +437,8 @@
 		ED7BE55E14EA335600C28E70 /* NodeProbingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeProbingLayer.m; sourceTree = "<group>"; };
 		ED7BE55F14EA335600C28E70 /* NodeScaleProbingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeScaleProbingLayer.h; sourceTree = "<group>"; };
 		ED7BE56014EA335600C28E70 /* NodeScaleProbingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeScaleProbingLayer.m; sourceTree = "<group>"; };
+		EDA4B35114F65590006BF550 /* BigBigDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigBigDataStore.h; sourceTree = "<group>"; };
+		EDA4B35214F65590006BF550 /* BigBigDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigBigDataStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,6 +519,8 @@
 				ED8A616514EA305B00BA7E84 /* Probling Layer */,
 				ED46512A14E142A700F90334 /* AppDelegate.h */,
 				ED46512B14E142A700F90334 /* AppDelegate.m */,
+				EDA4B35114F65590006BF550 /* BigBigDataStore.h */,
+				EDA4B35214F65590006BF550 /* BigBigDataStore.m */,
 				397B56F014ED2D4B00FBD13D /* MainUIKitView.h */,
 				397B56F114ED2D4B00FBD13D /* MainUIKitView.m */,
 				ED46512D14E142A700F90334 /* MainMenuLayer.h */,
@@ -1110,6 +1115,7 @@
 				D3C9E9BD14F2730300F80A36 /* VerticalTab.m in Sources */,
 				D3C9E9C014F2732000F80A36 /* ContentsTableView.m in Sources */,
 				ED112CEE14F3B4740013DCAD /* ViewFramingWindow.m in Sources */,
+				EDA4B35314F65590006BF550 /* BigBigDataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

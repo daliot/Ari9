@@ -10,7 +10,6 @@
 #import "VerticalTabView.h"
 
 
-
 @implementation MainUIKitView
 
 - (id)initWithFrame:(CGRect)frame
@@ -18,13 +17,13 @@
     self = [super initWithFrame:frame];
     if (self) {
 		
-		NSString *mainDataPath = [[NSBundle mainBundle] pathForResource:@"jsonData" ofType:@"plist"];
-		NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile: mainDataPath];
-		mainData = [[dataDic objectForKey:@"data"] retain];
-		
-		NSError *error = nil;
-		NSString *dataString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:mainData options:NSJSONWritingPrettyPrinted error:&error] encoding:NSUTF8StringEncoding];
-		NSLog(@"mainData json[%@]", dataString);
+//		NSString *mainDataPath = [[NSBundle mainBundle] pathForResource:@"jsonData" ofType:@"plist"];
+//		NSDictionary *dataDic = [NSDictionary dictionaryWithContentsOfFile: mainDataPath];
+//		mainData = [[dataDic objectForKey:@"data"] retain];
+//		
+//		NSError *error = nil;
+//		NSString *dataString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:mainData options:NSJSONWritingPrettyPrinted error:&error] encoding:NSUTF8StringEncoding];
+//		NSLog(@"mainData json[%@]", dataString);
 		
 		
 		[self setBackgroundColor:[UIColor whiteColor]];
