@@ -33,75 +33,32 @@
 		[switchButton addTarget:APPDAL action:@selector(switch_UIViewToCocosView) forControlEvents:UIControlEventTouchDown];
 		[self addSubview:switchButton];
 		
-		UITabBarItem *firstTab = [[UITabBarItem alloc] initWithTitle: @"upgrade" image: [UIImage imageNamed:@"Icon"] tag:0];
-		UITabBarItem *secondTab = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];
-		UITabBarItem *thirdTab = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:2];
-		UITabBarItem *fourthTab = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:3];
-		UITabBarItem *fifthTab = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:4];
 		
-		NSArray *tabArray = [NSArray arrayWithObjects:firstTab,secondTab,thirdTab,fourthTab,fifthTab, nil];
-		
+		tabViews = [[NSMutableArray alloc] init];
+		NSMutableArray *tabArray = [NSMutableArray array];
+		for(int i=0;i<3;i++){
+			UITabBarItem *hTab = [[UITabBarItem alloc] initWithTitle: [[BigBigDataStore sharedInstance] horizontalTabTitleAtIndex:i] image: [UIImage imageNamed:@"Icon"] tag:i];
+			[tabArray addObject: hTab];
+			
+			VerticalTabView *aTabView = [VerticalTabView createTabView:i];
+			[self addSubview:aTabView];
+			[aTabView release];
+			[tabViews addObject:aTabView];
+		}
+				
 		UITabBar *bottomTab = [[UITabBar alloc]init];
 		[bottomTab setFrame:CGRectMake(0, 431, 320, 49)];
 		[bottomTab setItems:tabArray];
 		[self addSubview:bottomTab];
 		
-		bottomTab.delegate = self;	
-		
-		
-		VerticalTabView *aTabView;
-		
-		tabView0 = [VerticalTabView createTabView:0];
-		aTabView = tabView0;
-		[self addSubview:aTabView];
-		[aTabView release];
-		
-		tabView1 = [VerticalTabView createTabView:1];
-		aTabView = tabView1;
-		[self addSubview:aTabView];
-		[aTabView release];
-		
-		tabView2 = [VerticalTabView createTabView:2];
-		aTabView = tabView2;
-		[self addSubview:aTabView];
-		[aTabView release];
-		
-		tabView3 = [VerticalTabView createTabView:3];
-		aTabView = tabView3;
-		[self addSubview:aTabView];
-		[aTabView release];
-		
-		tabView4 = [VerticalTabView createTabView:4];
-		aTabView = tabView4;
-		[self addSubview:aTabView];
-		[aTabView release];
+		bottomTab.delegate = self;
 	}
     return self;
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
-	switch (item.tag) {
-		case 0:
-			[self bringSubviewToFront:tabView0];
-			break;
-			
-		case 1:
-			[self bringSubviewToFront:tabView1];
-			break;
-			
-		case 2:
-			[self bringSubviewToFront:tabView2];
-			break;
-			
-		case 3:
-			[self bringSubviewToFront:tabView3];
-			break;
-			
-		case 4:
-			[self bringSubviewToFront:tabView4];
-			break;
-	}
+	[self bringSubviewToFront: [tabViews objectAtIndex: item.tag]];
 }
 
 /*

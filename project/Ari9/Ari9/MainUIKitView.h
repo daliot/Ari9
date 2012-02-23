@@ -11,11 +11,7 @@
 
 @interface MainUIKitView : UIView<UITabBarDelegate>
 {
-	NSArray *mainData;
-	VerticalTabView *tabView0;
-	VerticalTabView *tabView1;
-	VerticalTabView *tabView2;
-	VerticalTabView *tabView3;
-	VerticalTabView *tabView4;
+	NSArray *mainData;	
+	NSMutableArray *tabViews;
 }
 @end

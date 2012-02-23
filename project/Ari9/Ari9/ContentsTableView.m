@@ -29,7 +29,14 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-	cell.textLabel.text = [NSString stringWithFormat:@"%@", [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:0 verticalTabIndex:0 rowIndex:indexPath.row]];
+	
+	NSMutableString *string = [NSMutableString string];
+	NSDictionary *cellDic = [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:0 verticalTabIndex:0 rowIndex:indexPath.row];
+
+	for (NSString *keyObj in cellDic) {
+		[string appendFormat:@"%@=%@ ", keyObj, [cellDic objectForKey: keyObj]];
+	}	
+	cell.textLabel.text = string;
 
     return cell;
 }
