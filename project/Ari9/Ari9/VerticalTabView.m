@@ -87,16 +87,22 @@
 		[self addSubview:verticalTab];
 		[verticalTab release];
 		
-		[verticalTab addTabButton:@"건물"];
-		[verticalTab addTabButton:@"아이템"];
-		[verticalTab addTabButton:@"히어로"];
-		[verticalTab addTabButton:@"좀비"];
+		for(int i=0;i<[[BigBigDataStore sharedInstance] countOfVerticalTabsAtIndex:self.tag]; i++){
+			[verticalTab addTabButton: [[BigBigDataStore sharedInstance] verticalTabTitleAtIndex:self.tag atIndex:i] tag: i];
+		}
 
 		contentsTableView = [[ContentsTableView alloc] initWithFrame:LAYOUT_CONTENTS_SIDE];
 		[self addSubview:contentsTableView];
 		[contentsTableView release];
     }
     return self;
+}
+
+-(void) verticalTabButton:(UIButton*)sender
+{
+	contentsTableView.horizontalTabIndex = self.tag;
+	contentsTableView.verticalTabIndex = sender.tag;
+	[contentsTableView reloadData];
 }
 
 /*

@@ -71,13 +71,19 @@ static BigBigDataStore *singletonInstance = nil;
 	return [vtab objectForKey:@"타이틀"];
 }
 
+-(NSArray*) verticalTabsAtIndex:(int)int1
+{
+	return [[jsonStructure objectAtIndex: int1] objectForKey: @"수직탭바"];
+}
+
+-(NSUInteger) countOfVerticalTabsAtIndex:(int)int1
+{
+	return [[self verticalTabsAtIndex:int1] count];
+}
 
 -(NSArray*) tableViewCellDatasAtTabIndex:(int)int1 verticalTabIndex:(int)int2
 {
-	NSDictionary *horizontalTab = [jsonStructure objectAtIndex: int1];
-	NSArray *verticalTabBarItems = [horizontalTab objectForKey: @"수직탭바"];
-	
-	NSDictionary *vtab = [verticalTabBarItems objectAtIndex:int2];
+	NSDictionary *vtab = [[self verticalTabsAtIndex:int1] objectAtIndex:int2];
 	
 	NSArray *vtabItems = [vtab objectForKey:@"table items"];
 	return vtabItems;	

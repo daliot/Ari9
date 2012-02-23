@@ -10,6 +10,9 @@
 
 @implementation ContentsTableView
 
+@synthesize horizontalTabIndex;
+@synthesize verticalTabIndex;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -31,7 +34,7 @@
     }
 	
 	NSMutableString *string = [NSMutableString string];
-	NSDictionary *cellDic = [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:0 verticalTabIndex:0 rowIndex:indexPath.row];
+	NSDictionary *cellDic = [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:horizontalTabIndex verticalTabIndex:verticalTabIndex rowIndex:indexPath.row];
 
 	for (NSString *keyObj in cellDic) {
 		[string appendFormat:@"%@=%@ ", keyObj, [cellDic objectForKey: keyObj]];
@@ -42,7 +45,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [[BigBigDataStore sharedInstance] countOfTableViewCellDataAtTabIndex:0 verticalTabIndex:0];
+	return [[BigBigDataStore sharedInstance] countOfTableViewCellDataAtTabIndex:horizontalTabIndex verticalTabIndex:verticalTabIndex];
 }
 
 /*

@@ -11,7 +11,7 @@
 
 @implementation VerticalTab
 
--(void) addTabButton:(NSString*)titleString
+-(void) addTabButton:(NSString*)titleString tag:(int)anInteger
 {
 	UIButton *bt = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[bt setTitle:titleString forState:UIControlStateNormal];
@@ -23,6 +23,9 @@
 	bt.frame = CGRectMake(0, btFrameY, self.frame.size.width, 81);
 	[self addSubview: bt];
 	[tabButtons addObject: bt];
+	bt.tag = anInteger;
+	
+	[bt addTarget: [self superview] action:@selector(verticalTabButton:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (id)initWithFrame:(CGRect)frame

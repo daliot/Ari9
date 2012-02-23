@@ -16,6 +16,7 @@
 @property(nonatomic,retain) NSArray *jsonStructure;
 -(NSString*) horizontalTabTitleAtIndex:(int)anInteger;
 -(NSString*) verticalTabTitleAtIndex:(int)int1 atIndex:(int)int2;
+-(NSUInteger) countOfVerticalTabsAtIndex:(int)int1;
 -(NSUInteger) countOfTableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2;
 -(NSDictionary*) tableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3;
 @end

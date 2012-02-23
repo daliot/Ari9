@@ -11,5 +11,5 @@
 @interface VerticalTab : UIView{
 	NSMutableArray *tabButtons;
 }
--(void) addTabButton:(NSString*)titleString;
+-(void) addTabButton:(NSString*)titleString tag:(int)anInteger;
 @end

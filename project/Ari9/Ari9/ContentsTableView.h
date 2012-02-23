@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContentsTableView : UITableView<UITableViewDelegate,UITableViewDataSource>
+@interface ContentsTableView : UITableView<UITableViewDelegate,UITableViewDataSource>{
+	int horizontalTabIndex;
+	int verticalTabIndex;
+}
+
+@property(nonatomic,assign) int horizontalTabIndex;
+@property(nonatomic,assign) int verticalTabIndex;
 
 @end
