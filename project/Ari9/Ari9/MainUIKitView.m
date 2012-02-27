@@ -34,10 +34,14 @@
 		[self addSubview:switchButton];
 		
 		
+		// 세로탭 + 내용 
 		tabViews = [[NSMutableArray alloc] init];
 		NSMutableArray *tabArray = [NSMutableArray array];
 		for(int i=0;i<3;i++){
-			UITabBarItem *hTab = [[UITabBarItem alloc] initWithTitle: [[BigBigDataStore sharedInstance] horizontalTabTitleAtIndex:i] image: [UIImage imageNamed:@"Icon"] tag:i];
+			UITabBarItem *hTab = [[UITabBarItem alloc] 
+								  initWithTitle: [[BigBigDataStore sharedInstance] horizontalTabTitleAtIndex:i] 
+								  image: [UIImage imageNamed:@"Icon"] 
+								  tag:i];
 			[tabArray addObject: hTab];
 			
 			VerticalTabView *aTabView = [VerticalTabView createTabView:i];
@@ -45,13 +49,21 @@
 			[aTabView release];
 			[tabViews addObject:aTabView];
 		}
-				
+		
+		// 탭바 (바닥에 있는)
 		UITabBar *bottomTab = [[UITabBar alloc]init];
-		[bottomTab setFrame:CGRectMake(0, 431, 320, 49)];
+		[bottomTab setFrame:CGRectMake(0, 431, 320, LAYOUT_BOTTOM_TAB_BAR_HEIGHT)];
 		[bottomTab setItems:tabArray];
 		[self addSubview:bottomTab];
 		
 		bottomTab.delegate = self;
+		
+		// 타이틀 바
+		titleBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, LAYOUT_TITLE_BAR_HEIGHT)];
+		[titleBar setBackgroundColor:[UIColor purpleColor]];
+		
+		[self addSubview:titleBar];
+		
 	}
     return self;
 }

@@ -49,7 +49,7 @@
 
 +(VerticalTabView*)createTabView:(int)tag 
 {
-	VerticalTabView *tempView = [[VerticalTabView alloc]initWithFrame: LAYOUT_CONTENTS_FULL];  
+	VerticalTabView *tempView = [[VerticalTabView alloc] initWithFrame: LAYOUT_CONTENTS_FULL];  
 	[tempView setTag:tag];
 	[tempView setMyColor];
 	return tempView;

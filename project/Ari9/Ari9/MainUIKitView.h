@@ -13,5 +13,6 @@
 {
 	NSArray *mainData;	
 	NSMutableArray *tabViews;
+	UIView *titleBar;
 }
 @end
