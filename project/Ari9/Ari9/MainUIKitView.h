@@ -14,5 +14,8 @@
 	NSArray *mainData;	
 	NSMutableArray *tabViews;
 	UIView *titleBar;
+	UILabel *lblTitle;
 }
+
+- (void)setTitleText: (NSString*)aTitle;
 @end

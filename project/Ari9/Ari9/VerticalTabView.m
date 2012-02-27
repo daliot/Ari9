@@ -103,6 +103,8 @@
 	contentsTableView.horizontalTabIndex = self.tag;
 	contentsTableView.verticalTabIndex = sender.tag;
 	[contentsTableView reloadData];
+	
+	[APPDAL setTitleText:sender.titleLabel.text];
 }
 
 /*

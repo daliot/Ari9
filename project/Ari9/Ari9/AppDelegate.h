@@ -27,5 +27,6 @@
 
 -(void)switch_UIViewToCocosView;
 -(void)switch_CocosViewToUIView;
+-(void)setTitleText:(NSString *)aTitle;
 
 @end

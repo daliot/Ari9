@@ -62,15 +62,35 @@
 		titleBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, LAYOUT_TITLE_BAR_HEIGHT)];
 		[titleBar setBackgroundColor:[UIColor purpleColor]];
 		
+		UIButton *btnShowMenu = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		[btnShowMenu setTitle:@"메뉴" forState:UIControlStateNormal];
+		[titleBar addSubview:btnShowMenu];
+		
+		btnShowMenu.frame = CGRectMake(5, 5, 55, LAYOUT_TITLE_BAR_HEIGHT - 10);
+		
+		
+		lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(65, 5, 320-70, LAYOUT_TITLE_BAR_HEIGHT - 10)];
+		[lblTitle setBackgroundColor:[UIColor clearColor]];
+		[lblTitle setText:@"ABCD"];
+		[lblTitle setTextAlignment:UITextAlignmentCenter];
+		[titleBar addSubview:lblTitle];
+		
 		[self addSubview:titleBar];
 		
 	}
     return self;
 }
 
+- (void)setTitleText: (NSString*)aTitle
+{
+	[lblTitle setText:aTitle];
+}
+
+
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
 	[self bringSubviewToFront: [tabViews objectAtIndex: item.tag]];
+	[self setTitleText:item.title];
 }
 
 /*

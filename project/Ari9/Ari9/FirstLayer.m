@@ -16,7 +16,7 @@
 	
 		// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
-	NSLog(@"111111111");
+ 
 	
 	
 	

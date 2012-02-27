@@ -91,6 +91,8 @@
 	return YES;
 }
 
+
+
 -(void)switch_UIViewToCocosView
 {		
 	[window_ bringSubviewToFront:navController_.view];
@@ -99,6 +101,11 @@
 -(void)switch_CocosViewToUIView
 {
 	[window_ bringSubviewToFront:UIKitView];
+}
+
+-(void)setTitleText:(NSString *)aTitle
+{
+	[UIKitView setTitleText:aTitle];
 }
 
 // Supported orientations: Landscape. Customize it for your own needs
