@@ -17,6 +17,9 @@
 	ContentsTableView *contentsTableView;
 	BOOL verticalTabShown;
 }
+
+@property BOOL verticalTabShown;
+
 -(void) showVerticalTab;
 -(void) hideVerticalTab;
 +(VerticalTabView*)createTabView:(int)tag;

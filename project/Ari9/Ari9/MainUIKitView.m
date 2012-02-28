@@ -51,10 +51,14 @@
 		}
 		
 		// 탭바 (바닥에 있는)
-		UITabBar *bottomTab = [[UITabBar alloc]init];
+		bottomTab = [[UITabBar alloc]init];
 		[bottomTab setFrame:CGRectMake(0, 431, 320, LAYOUT_BOTTOM_TAB_BAR_HEIGHT)];
 		[bottomTab setItems:tabArray];
+		
+		//[bottomTab setSelectedItem:[[bottomTab items]objectAtIndex:0]];
 		[self addSubview:bottomTab];
+		[bottomTab setSelectedItem:[[bottomTab items]objectAtIndex:0]];
+		
 		
 		bottomTab.delegate = self;
 		
@@ -64,19 +68,19 @@
 		
 		UIButton *btnShowMenu = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		[btnShowMenu setTitle:@"메뉴" forState:UIControlStateNormal];
+		[btnShowMenu addTarget:self action:@selector(toggle_VerticalTab) forControlEvents:UIControlEventTouchDown];
 		[titleBar addSubview:btnShowMenu];
-		
 		btnShowMenu.frame = CGRectMake(5, 5, 55, LAYOUT_TITLE_BAR_HEIGHT - 10);
 		
 		
 		lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(65, 5, 320-70, LAYOUT_TITLE_BAR_HEIGHT - 10)];
 		[lblTitle setBackgroundColor:[UIColor clearColor]];
-		[lblTitle setText:@"ABCD"];
+		//[lblTitle setText:@""];
 		[lblTitle setTextAlignment:UITextAlignmentCenter];
 		[titleBar addSubview:lblTitle];
 		
 		[self addSubview:titleBar];
-		
+		[self tabBar:bottomTab didSelectItem:[[bottomTab items]objectAtIndex:0]];
 	}
     return self;
 }
@@ -91,6 +95,12 @@
 {
 	[self bringSubviewToFront: [tabViews objectAtIndex: item.tag]];
 	[self setTitleText:item.title];
+}
+
+-(void)toggle_VerticalTab
+{
+	if ([[tabViews objectAtIndex:[[bottomTab selectedItem] tag]] verticalTabShown])[[tabViews objectAtIndex:[[bottomTab selectedItem] tag]] hideVerticalTab];
+	else [[tabViews objectAtIndex:[[bottomTab selectedItem] tag]] showVerticalTab];
 }
 
 /*

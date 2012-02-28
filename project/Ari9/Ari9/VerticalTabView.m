@@ -11,17 +11,18 @@
 #import "ContentsTableView.h"
 
 @implementation VerticalTabView
+@synthesize verticalTabShown;
+
 
 -(void) showVerticalTab
 {
 	if(verticalTabShown==YES) return;
 	verticalTabShown=YES;
-	[UIView animateWithDuration:1.5 animations:^{
+	[UIView animateWithDuration:0.2f animations:^{
 		CGRect fr = verticalTab.frame;
 		fr.origin.x = 0;
 		verticalTab.frame = fr;
-		
-		
+				
 		CGRect ctfr = contentsTableView.frame;
 		ctfr.origin.x = fr.origin.x + fr.size.width;
 		ctfr.size.width = 320-ctfr.origin.x;
@@ -33,13 +34,12 @@
 {
 	if(verticalTabShown==NO) return;
 	verticalTabShown=NO;
-	[UIView animateWithDuration:1.5 animations: ^{
-
+	
+	[UIView animateWithDuration:0.2f animations: ^{
 		CGRect fr = verticalTab.frame;
 		fr.origin.x = -fr.size.width;
 		verticalTab.frame = fr;
-		
-		
+				
 		CGRect ctfr = contentsTableView.frame;
 		ctfr.origin.x = fr.origin.x + fr.size.width;
 		ctfr.size.width = 320-ctfr.origin.x;
