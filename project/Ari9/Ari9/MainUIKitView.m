@@ -57,9 +57,7 @@
 		
 		//[bottomTab setSelectedItem:[[bottomTab items]objectAtIndex:0]];
 		[self addSubview:bottomTab];
-		[bottomTab setSelectedItem:[[bottomTab items]objectAtIndex:0]];
-		
-		
+		[bottomTab setSelectedItem:[[bottomTab items]objectAtIndex:0]];		
 		bottomTab.delegate = self;
 		
 		// 타이틀 바
@@ -81,6 +79,11 @@
 		
 		[self addSubview:titleBar];
 		[self tabBar:bottomTab didSelectItem:[[bottomTab items]objectAtIndex:0]];
+		
+		//UISwipeGestureRecognizer *verticalTabToggle = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(toggle_VerticalTab)];
+		//[verticalTabToggle setDirection:UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight];
+		//[verticalTabToggle setNumberOfTouchesRequired:2];
+		//[self addGestureRecognizer:verticalTabToggle];
 	}
     return self;
 }
@@ -99,8 +102,7 @@
 
 -(void)toggle_VerticalTab
 {
-	if ([[tabViews objectAtIndex:[[bottomTab selectedItem] tag]] verticalTabShown])[[tabViews objectAtIndex:[[bottomTab selectedItem] tag]] hideVerticalTab];
-	else [[tabViews objectAtIndex:[[bottomTab selectedItem] tag]] showVerticalTab];
+	[[tabViews objectAtIndex:[[bottomTab selectedItem] tag]] toggle_VerticalTab];
 }
 
 /*

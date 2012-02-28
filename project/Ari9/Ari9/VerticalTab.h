@@ -12,4 +12,5 @@
 	NSMutableArray *tabButtons;
 }
 -(void) addTabButton:(NSString*)titleString tag:(int)anInteger;
+-(void)unHilight_AllButton:(UIButton *)btn;
 @end

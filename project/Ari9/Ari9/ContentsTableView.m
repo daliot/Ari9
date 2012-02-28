@@ -37,15 +37,22 @@
 	NSDictionary *cellDic = [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:horizontalTabIndex verticalTabIndex:verticalTabIndex rowIndex:indexPath.row];
 
 	for (NSString *keyObj in cellDic) {
-		[string appendFormat:@"%@=%@ ", keyObj, [cellDic objectForKey: keyObj]];
-	}	
+		[string appendFormat:@"%@=%@ \n", keyObj, [cellDic objectForKey: keyObj]];
+	}
 	cell.textLabel.text = string;
+	cell.textLabel.font = [UIFont fontWithName:@"Hevetica" size:14];
+	cell.textLabel.numberOfLines = 0;
 
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	return [[BigBigDataStore sharedInstance] countOfTableViewCellDataAtTabIndex:horizontalTabIndex verticalTabIndex:verticalTabIndex];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 130.0f;
 }
 
 /*

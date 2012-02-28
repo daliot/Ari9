@@ -38,6 +38,13 @@
     return self;
 }
 
+-(void)unHilight_AllButton:(UIButton *)btn
+{
+	for (UIButton *button in tabButtons) {
+		if(button != btn)button.highlighted = NO;
+	}
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

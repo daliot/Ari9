@@ -11,8 +11,6 @@
 #import "ContentsTableView.h"
 
 @implementation VerticalTabView
-@synthesize verticalTabShown;
-
 
 -(void) showVerticalTab
 {
@@ -47,35 +45,19 @@
 	}];
 }
 
+-(void) toggle_VerticalTab
+{
+	if (verticalTabShown)[self hideVerticalTab];
+	else [self showVerticalTab];
+}
+
 +(VerticalTabView*)createTabView:(int)tag 
 {
 	VerticalTabView *tempView = [[VerticalTabView alloc] initWithFrame: LAYOUT_CONTENTS_FULL];  
 	[tempView setTag:tag];
-	[tempView setMyColor];
 	return tempView;
 }
 
--(void) setMyColor
-{
-	switch (self.tag) {
-		case 0:
-			[self setBackgroundColor:[UIColor redColor]];
-			break;
-		case 1:
-			[self setBackgroundColor:[UIColor blueColor]];
-			break;
-		case 2:
-			[self setBackgroundColor:[UIColor grayColor]];
-			break;
-		case 3:
-			[self setBackgroundColor:[UIColor yellowColor]];
-			break;
-		case 4:
-			[self setBackgroundColor:[UIColor magentaColor]];
-			break;
-			
-	}
-}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -100,11 +82,19 @@
 
 -(void) verticalTabButton:(UIButton*)sender
 {
+	[verticalTab unHilight_AllButton:sender];
+	[self performSelector:@selector(change_SelectedButton:) withObject:sender afterDelay:0.1f];
+	
 	contentsTableView.horizontalTabIndex = self.tag;
 	contentsTableView.verticalTabIndex = sender.tag;
 	[contentsTableView reloadData];
 	
 	[APPDAL setTitleText:sender.titleLabel.text];
+}
+
+-(void)change_SelectedButton:(UIButton *)sender
+{	
+	sender.highlighted = YES;
 }
 
 /*
@@ -116,9 +106,5 @@
 }
 */
 
--(void)addTabButton:(UIImage*)image title:(NSString*)title
-{
-	
-}
 
 @end
