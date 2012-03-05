@@ -100,6 +100,17 @@ static BigBigDataStore *singletonInstance = nil;
 	return [[self tableViewCellDatasAtTabIndex:int1 verticalTabIndex:int2] objectAtIndex: int3];
 }
 
+-(NSInteger)getType:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3
+{
+	NSString *str =  [[self tableViewCellDataAtTabIndex:int1 verticalTabIndex:int2 rowIndex:int3] objectForKey:@"type"];
+	if ([@"1" isEqualToString: str]) {
+		return [str intValue];
+	}
+	
+	return -1;
+	
+}
+
 -(void) dealloc
 {
 	self.jsonStructure = nil;

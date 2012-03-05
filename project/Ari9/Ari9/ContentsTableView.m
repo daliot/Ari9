@@ -7,6 +7,9 @@
 //
 
 #import "ContentsTableView.h"
+#import "SimpleCell.h"
+#import "CustomCell.h"
+
 
 @implementation ContentsTableView
 
@@ -26,23 +29,34 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
+    
+	NSDictionary *cellDic = [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:horizontalTabIndex verticalTabIndex:verticalTabIndex rowIndex:indexPath.row];
+	int type = [[BigBigDataStore sharedInstance] getType:horizontalTabIndex verticalTabIndex:verticalTabIndex rowIndex:indexPath.row];
+	
+	NSString *CellIdentifier;
+	if (type == 1) {
+		CellIdentifier = @"SimpleCell";
+	}
+	else {
+		CellIdentifier = @"CustomCell";
+	}
+	
 	
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
 	
-	NSMutableString *string = [NSMutableString string];
-	NSDictionary *cellDic = [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:horizontalTabIndex verticalTabIndex:verticalTabIndex rowIndex:indexPath.row];
-
-	for (NSString *keyObj in cellDic) {
-		[string appendFormat:@"%@=%@ \n", keyObj, [cellDic objectForKey: keyObj]];
-	}
-	cell.textLabel.text = string;
-	cell.textLabel.font = [UIFont fontWithName:@"Hevetica" size:14];
-	cell.textLabel.numberOfLines = 0;
-
+	if (cell == nil) {
+        if (type == 1) 
+		{
+			cell = [[[SimpleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		}
+		else {
+			cell = [[[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		}
+		
+		
+    }
+	[(SimpleCell*)cell setData:cellDic];	
+	
     return cell;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

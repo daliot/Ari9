@@ -19,4 +19,5 @@
 -(NSUInteger) countOfVerticalTabsAtIndex:(int)int1;
 -(NSUInteger) countOfTableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2;
 -(NSDictionary*) tableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3;
+-(NSInteger)getType:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3;
 @end
