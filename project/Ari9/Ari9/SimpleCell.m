@@ -25,23 +25,23 @@
 	[self setData:cellDic type:@"simple"];
 }
 
-- (void)setData:(NSDictionary*)cellDic type:(NSString*)str
-{
-	NSMutableString *string = [NSMutableString string];
-	[string appendFormat:@"%@\n",str];
-	for (NSString *keyObj in cellDic) {
-		[string appendFormat:@"%@=%@ \n", keyObj, [cellDic objectForKey: keyObj]];
-	}
-	self.textLabel.text = string;
-	self.textLabel.font = [UIFont fontWithName:@"Hevetica" size:14];
-	self.textLabel.numberOfLines = 0;
-}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
++(id) cellWithStyle:(UITableViewCellStyle)cellStyleInt tableView:(UITableView*) tableView cellDic:(NSDictionary*)cellDic
+{
+	NSString *CellIdentifier = @"SimpleCell";
+	SimpleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];	
+	if (cell == nil) {
+		cell = [[[self alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		
+	}
+	[cell setData:cellDic];			
+	return cell;
 }
 
 @end

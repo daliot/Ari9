@@ -6,11 +6,10 @@
 //  Copyright (c) 2012년 앱달. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UpgradeCell.h"
 
-@interface SimpleCell : UITableViewCell
+@interface SimpleCell : UpgradeCell
 
-- (void)setData:(NSDictionary*)cellDic;
-- (void)setData:(NSDictionary*)cellDic type:(NSString*)str;
+
 
 @end

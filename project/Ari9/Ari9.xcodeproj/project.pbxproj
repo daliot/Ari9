@@ -17,6 +17,7 @@
 		39AB737214E3E7CE00736BB1 /* TabLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AB737114E3E7CE00736BB1 /* TabLayer.m */; };
 		D3ADC58A1504E10B005E4A31 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3ADC5891504E10B005E4A31 /* CustomCell.m */; };
 		D3ADC58E1504E196005E4A31 /* SimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3ADC58D1504E196005E4A31 /* SimpleCell.m */; };
+		D3ADC5911504E84D005E4A31 /* UpgradeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3ADC5901504E84C005E4A31 /* UpgradeCell.m */; };
 		D3C9E9B914F2702100F80A36 /* VerticalTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C9E9B814F2702100F80A36 /* VerticalTabView.m */; };
 		D3C9E9BD14F2730300F80A36 /* VerticalTab.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C9E9BC14F2730300F80A36 /* VerticalTab.m */; };
 		D3C9E9C014F2732000F80A36 /* ContentsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C9E9BF14F2732000F80A36 /* ContentsTableView.m */; };
@@ -179,6 +180,8 @@
 		D3ADC5891504E10B005E4A31 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		D3ADC58C1504E196005E4A31 /* SimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCell.h; sourceTree = "<group>"; };
 		D3ADC58D1504E196005E4A31 /* SimpleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCell.m; sourceTree = "<group>"; };
+		D3ADC58F1504E84C005E4A31 /* UpgradeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeCell.h; sourceTree = "<group>"; };
+		D3ADC5901504E84C005E4A31 /* UpgradeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeCell.m; sourceTree = "<group>"; };
 		D3C9E9B714F2702100F80A36 /* VerticalTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalTabView.h; sourceTree = "<group>"; };
 		D3C9E9B814F2702100F80A36 /* VerticalTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalTabView.m; sourceTree = "<group>"; };
 		D3C9E9BB14F2730300F80A36 /* VerticalTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalTab.h; sourceTree = "<group>"; };
@@ -537,6 +540,8 @@
 				D3C9E9BC14F2730300F80A36 /* VerticalTab.m */,
 				D3C9E9BE14F2732000F80A36 /* ContentsTableView.h */,
 				D3C9E9BF14F2732000F80A36 /* ContentsTableView.m */,
+				D3ADC58F1504E84C005E4A31 /* UpgradeCell.h */,
+				D3ADC5901504E84C005E4A31 /* UpgradeCell.m */,
 				D3ADC58C1504E196005E4A31 /* SimpleCell.h */,
 				D3ADC58D1504E196005E4A31 /* SimpleCell.m */,
 				D3ADC5881504E10B005E4A31 /* CustomCell.h */,
@@ -1128,6 +1133,7 @@
 				EDA4B35314F65590006BF550 /* BigBigDataStore.m in Sources */,
 				D3ADC58A1504E10B005E4A31 /* CustomCell.m in Sources */,
 				D3ADC58E1504E196005E4A31 /* SimpleCell.m in Sources */,
+				D3ADC5911504E84D005E4A31 /* UpgradeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

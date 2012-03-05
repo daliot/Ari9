@@ -6,10 +6,8 @@
 //  Copyright (c) 2012년 앱달. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UpgradeCell.h"
 
-#import "SimpleCell.h"
-
-@interface CustomCell : SimpleCell
+@interface CustomCell : UpgradeCell
 
 @end

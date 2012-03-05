@@ -33,31 +33,13 @@
 	NSDictionary *cellDic = [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:horizontalTabIndex verticalTabIndex:verticalTabIndex rowIndex:indexPath.row];
 	int type = [[BigBigDataStore sharedInstance] getType:horizontalTabIndex verticalTabIndex:verticalTabIndex rowIndex:indexPath.row];
 	
-	NSString *CellIdentifier;
 	if (type == 1) {
-		CellIdentifier = @"SimpleCell";
+		return [SimpleCell cellWithStyle:UITableViewCellStyleDefault tableView:tableView cellDic:cellDic];
 	}
 	else {
-		CellIdentifier = @"CustomCell";
+		return [CustomCell cellWithStyle:UITableViewCellStyleDefault tableView:tableView cellDic:cellDic];
 	}
-	
-	
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-	
-	if (cell == nil) {
-        if (type == 1) 
-		{
-			cell = [[[SimpleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		}
-		else {
-			cell = [[[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		}
-		
-		
-    }
-	[(SimpleCell*)cell setData:cellDic];	
-	
-    return cell;
+    return nil;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
