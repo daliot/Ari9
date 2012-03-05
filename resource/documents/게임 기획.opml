@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<opml version="1.0">
+    <head>
+        <title>menu</title>
+        <ownerName></ownerName>
+    </head>
+    <body>
+        <outline text="자랑 컬랙션(창고)">
+            <outline text="레어 유닛"></outline>
+            <outline text="레어 아이템"></outline>
+        </outline>
+        <outline text="IAP">
+            <outline text="귀하지 않은 아이템"></outline>
+            <outline text="super food 구매"></outline>
+            <outline text="낚시대 (현금)"></outline>
+        </outline>
+        <outline text="퀘스트">
+            <outline text="메인 퀘스트">
+                <outline text="잃어버린 수퍼영웅과 재회"></outline>
+            </outline>
+            <outline text="미니게임">
+                <outline text="아이템 낚시">
+                    <outline text="레어 유닛(좀비)"></outline>
+                    <outline text="레어 아이템"></outline>
+                </outline>
+            </outline>
+            <outline text="日日 퀘스트">
+                <outline text="NPC를 공격">
+                    <outline text="생산"></outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="upgrade">
+            <outline text="나인히어로 9영웅"></outline>
+            <outline text="좀비 40여종"></outline>
+            <outline text="건물"></outline>
+            <outline text="스킬"></outline>
+        </outline>
+        <outline text="생산">
+            <outline text="upkeep 인구수"></outline>
+            <outline text="농장으로 턴마다 음식을 획득">
+                <outline text="키우려는 유닛에 특화된 식물"></outline>
+                <outline text="식물을 키우면, 축산업을 한다."></outline>
+                <outline text="고기만 먹으면 성장이 둔화. 채소도 같이 길러 먹어야 함"></outline>
+            </outline>
+            <outline text="화폐">
+                <outline text="super food"></outline>
+                <outline text="food"></outline>
+            </outline>
+        </outline>
+        <outline text="전쟁">
+            <outline text="수퍼영웅">
+                <outline text="스테미너 가 없으면">
+                    <outline text="시간이 지나면 차오른다">
+                        <outline text="모조(IAP) 현질"></outline>
+                    </outline>
+                    <outline text="전쟁시 피해 정도에 따라서 체력감소"></outline>
+                    <outline text="일정체력 미만일시, 보호모드"></outline>
+                </outline>
+                <outline text="1 passive skill + 1 active skill"></outline>
+                <outline text="처음 1개 나중에 2개까지 사용가능"></outline>
+                <outline text="전쟁을 통해서 경험치와 레벨업"></outline>
+                <outline text="공격력이나 방어력은 없다."></outline>
+                <outline text="수퍼영웅의스킬">
+                    <outline text="가위바위보 상성"></outline>
+                    <outline text="1영웅 당 1 passive skill + 1 active skill"></outline>
+                </outline>
+            </outline>
+            <outline text="수비">
+                <outline text="방어 전략 사용자화 제공"></outline>
+                <outline text="수비 잘하면..">
+                    <outline text="돈을 덜 잃거나"></outline>
+                    <outline text="돈을 뺏는다."></outline>
+                    <outline text="병력 생포"></outline>
+                </outline>
+            </outline>
+            <outline text="공격">
+                <outline text="공격기와 방어기와의 상성이 있으면 좋겠다."></outline>
+                <outline text="방식">
+                    <outline text="문명: 최대 5개 + 동맹국의 병력 수(최대10개까지)"></outline>
+                </outline>
+            </outline>
+            <outline text="유닛">
+                <outline text="좀비와 영웅">
+                    <outline text="영웅은 공격에 유리"></outline>
+                    <outline text="좀비는 방어에 유리"></outline>
+                </outline>
+            </outline>
+        </outline>
+        <outline text="동맹">
+            <outline text="코드대신 id를 사용"></outline>
+            <outline text="복수할 놈들(revenge list)"></outline>
+            <outline text="현상수배(돈줄테니 공격해줘)"></outline>
+        </outline>
+        <outline text="아이템?">
+            <outline text="칼"></outline>
+            <outline text="방패"></outline>
+            <outline text="갑옷"></outline>
+            <outline text="지팡이"></outline>
+            <outline text="반지"></outline>
+        </outline>
+    </body>
+</opml>
