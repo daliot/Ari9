@@ -45,7 +45,14 @@
 
 +(id) cellWithStyle:(UITableViewCellStyle)cellStyleInt tableView:(UITableView*) tableView cellDic:(NSDictionary*)cellDic
 {
-	return self;
+	NSString *CellIdentifier = [self description];
+	UpgradeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];	
+	if (cell == nil) {
+		cell = [[[self alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		
+	}
+	[cell setData:cellDic];			
+	return cell;
 }
 
 @end

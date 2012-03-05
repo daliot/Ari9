@@ -32,14 +32,8 @@
     
 	NSDictionary *cellDic = [[BigBigDataStore sharedInstance] tableViewCellDataAtTabIndex:horizontalTabIndex verticalTabIndex:verticalTabIndex rowIndex:indexPath.row];
 	int type = [[BigBigDataStore sharedInstance] getType:horizontalTabIndex verticalTabIndex:verticalTabIndex rowIndex:indexPath.row];
-	
-	if (type == 1) {
-		return [SimpleCell cellWithStyle:UITableViewCellStyleDefault tableView:tableView cellDic:cellDic];
-	}
-	else {
-		return [CustomCell cellWithStyle:UITableViewCellStyleDefault tableView:tableView cellDic:cellDic];
-	}
-    return nil;
+	Class aClass = (type == 1)?[SimpleCell class]:[CustomCell class];
+	return [aClass cellWithStyle:UITableViewCellStyleDefault tableView:tableView cellDic:cellDic];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

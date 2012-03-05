@@ -32,16 +32,4 @@
     // Configure the view for the selected state
 }
 
-+(id) cellWithStyle:(UITableViewCellStyle)cellStyleInt tableView:(UITableView*) tableView cellDic:(NSDictionary*)cellDic
-{
-	NSString *CellIdentifier = @"SimpleCell";
-	SimpleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];	
-	if (cell == nil) {
-		cell = [[[self alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-		
-	}
-	[cell setData:cellDic];			
-	return cell;
-}
-
 @end
