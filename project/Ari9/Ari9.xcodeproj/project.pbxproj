@@ -158,6 +158,11 @@
 		ED7BE56214EA335600C28E70 /* NodeProbingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE55E14EA335600C28E70 /* NodeProbingLayer.m */; };
 		ED7BE56314EA335600C28E70 /* NodeScaleProbingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE56014EA335600C28E70 /* NodeScaleProbingLayer.m */; };
 		EDA4B35314F65590006BF550 /* BigBigDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA4B35214F65590006BF550 /* BigBigDataStore.m */; };
+		EDF687E5150626DD0033DC4B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF687E4150626DD0033DC4B /* SenTestingKit.framework */; };
+		EDF687E6150626DD0033DC4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FB114E142A400F90334 /* UIKit.framework */; };
+		EDF687E7150626DD0033DC4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FB314E142A400F90334 /* Foundation.framework */; };
+		EDF687ED150626DD0033DC4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDF687EB150626DD0033DC4B /* InfoPlist.strings */; };
+		EDF687F0150626DE0033DC4B /* LogicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF687EF150626DD0033DC4B /* LogicTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -448,6 +453,13 @@
 		ED7BE56014EA335600C28E70 /* NodeScaleProbingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NodeScaleProbingLayer.m; sourceTree = "<group>"; };
 		EDA4B35114F65590006BF550 /* BigBigDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigBigDataStore.h; sourceTree = "<group>"; };
 		EDA4B35214F65590006BF550 /* BigBigDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigBigDataStore.m; sourceTree = "<group>"; };
+		EDF687E3150626DD0033DC4B /* LogicTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogicTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF687E4150626DD0033DC4B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		EDF687EA150626DD0033DC4B /* LogicTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicTest-Info.plist"; sourceTree = "<group>"; };
+		EDF687EC150626DD0033DC4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EDF687EE150626DD0033DC4B /* LogicTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogicTest.h; sourceTree = "<group>"; };
+		EDF687EF150626DD0033DC4B /* LogicTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogicTest.m; sourceTree = "<group>"; };
+		EDF687F1150626DE0033DC4B /* LogicTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LogicTest-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +476,16 @@
 				ED464FB414E142A400F90334 /* Foundation.framework in Frameworks */,
 				ED464FB614E142A400F90334 /* CoreGraphics.framework in Frameworks */,
 				ED464FB814E142A400F90334 /* GameKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF687DF150626DD0033DC4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF687E5150626DD0033DC4B /* SenTestingKit.framework in Frameworks */,
+				EDF687E6150626DD0033DC4B /* UIKit.framework in Frameworks */,
+				EDF687E7150626DD0033DC4B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				ED464FB914E142A400F90334 /* Ari9 */,
+				EDF687E8150626DD0033DC4B /* LogicTest */,
 				ED464FA614E142A400F90334 /* Frameworks */,
 				ED464FA414E142A400F90334 /* Products */,
 			);
@@ -502,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				ED464FA314E142A400F90334 /* Ari9.app */,
+				EDF687E3150626DD0033DC4B /* LogicTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -518,6 +542,7 @@
 				ED464FB314E142A400F90334 /* Foundation.framework */,
 				ED464FB514E142A400F90334 /* CoreGraphics.framework */,
 				ED464FB714E142A400F90334 /* GameKit.framework */,
+				EDF687E4150626DD0033DC4B /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -931,6 +956,26 @@
 			name = "Probling Layer";
 			sourceTree = "<group>";
 		};
+		EDF687E8150626DD0033DC4B /* LogicTest */ = {
+			isa = PBXGroup;
+			children = (
+				EDF687EE150626DD0033DC4B /* LogicTest.h */,
+				EDF687EF150626DD0033DC4B /* LogicTest.m */,
+				EDF687E9150626DD0033DC4B /* Supporting Files */,
+			);
+			path = LogicTest;
+			sourceTree = "<group>";
+		};
+		EDF687E9150626DD0033DC4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDF687EA150626DD0033DC4B /* LogicTest-Info.plist */,
+				EDF687EB150626DD0033DC4B /* InfoPlist.strings */,
+				EDF687F1150626DE0033DC4B /* LogicTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -950,6 +995,24 @@
 			productName = Ari9;
 			productReference = ED464FA314E142A400F90334 /* Ari9.app */;
 			productType = "com.apple.product-type.application";
+		};
+		EDF687E2150626DD0033DC4B /* LogicTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF687F4150626DE0033DC4B /* Build configuration list for PBXNativeTarget "LogicTest" */;
+			buildPhases = (
+				EDF687DE150626DD0033DC4B /* Sources */,
+				EDF687DF150626DD0033DC4B /* Frameworks */,
+				EDF687E0150626DD0033DC4B /* Resources */,
+				EDF687E1150626DD0033DC4B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LogicTest;
+			productName = LogicTest;
+			productReference = EDF687E3150626DD0033DC4B /* LogicTest.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -973,6 +1036,7 @@
 			projectRoot = "";
 			targets = (
 				ED464FA214E142A400F90334 /* Ari9 */,
+				EDF687E2150626DD0033DC4B /* LogicTest */,
 			);
 		};
 /* End PBXProject section */
@@ -1012,7 +1076,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDF687E0150626DD0033DC4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF687ED150626DD0033DC4B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EDF687E1150626DD0033DC4B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED464F9F14E142A400F90334 /* Sources */ = {
@@ -1137,7 +1225,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDF687DE150626DD0033DC4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF687F0150626DE0033DC4B /* LogicTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EDF687EB150626DD0033DC4B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDF687EC150626DD0033DC4B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		ED46513014E142A700F90334 /* Debug */ = {
@@ -1212,6 +1319,50 @@
 			};
 			name = Release;
 		};
+		EDF687F2150626DE0033DC4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LogicTest/LogicTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "LogicTest/LogicTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		EDF687F3150626DE0033DC4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LogicTest/LogicTest-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "LogicTest/LogicTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1232,6 +1383,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EDF687F4150626DE0033DC4B /* Build configuration list for PBXNativeTarget "LogicTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF687F2150626DE0033DC4B /* Debug */,
+				EDF687F3150626DE0033DC4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
