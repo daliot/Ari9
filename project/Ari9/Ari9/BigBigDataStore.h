@@ -30,7 +30,6 @@
 }
 + (BigBigDataStore *) sharedInstance;
 +(void) destroySharedInstance;
-@property(nonatomic,retain) NSArray *jsonStructure;
 -(NSString*) horizontalTabTitleAtIndex:(int)anInteger;
 -(NSString*) verticalTabTitleAtIndex:(int)int1 atIndex:(int)int2;
 -(NSUInteger) countOfVerticalTabsAtIndex:(int)int1;

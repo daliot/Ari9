@@ -31,15 +31,6 @@
 	return [[self.jsonStructure objectAtIndex: anInteger] objectForKey: @"타이틀"];
 }
 
--(NSString*) verticalTabTitleAtIndex:(int)int1 atIndex:(int)int2
-{
-	NSDictionary *horizontalTab = [self.jsonStructure objectAtIndex: int1];
-	NSArray *verticalTabBarItems = [horizontalTab objectForKey: @"수직탭바"];
-	
-	NSDictionary *vtab = [verticalTabBarItems objectAtIndex:int2];
-	return [vtab objectForKey:@"타이틀"];
-}
-
 -(NSArray*) verticalTabsAtIndex:(int)int1
 {
 	return [[self.jsonStructure objectAtIndex: int1] objectForKey: @"수직탭바"];
@@ -50,22 +41,34 @@
 	return [[self verticalTabsAtIndex:int1] count];
 }
 
+-(NSDictionary*) verticalTabAtHorizontalIndex: (int)int1 atVerticalTabIndex:(int)int2
+{
+	return [[self verticalTabsAtIndex:int1] objectAtIndex:int2];
+}
+
 -(NSArray*) tableViewCellDatasAtTabIndex:(int)int1 verticalTabIndex:(int)int2
 {
-	NSDictionary *vtab = [[self verticalTabsAtIndex:int1] objectAtIndex:int2];
-	
-	NSArray *vtabItems = [vtab objectForKey:@"table items"];
-	return vtabItems;	
+	return [[self verticalTabAtHorizontalIndex:int1 atVerticalTabIndex:int2] objectForKey:@"table items"];
+}
+
+-(NSString*) verticalTabTitleAtIndex:(int)int1 atIndex:(int)int2
+{
+	return [[self verticalTabAtHorizontalIndex:int1 atVerticalTabIndex:int2] objectForKey:@"타이틀"];
+}
+
+-(NSArray*) cellAtHor:(int)int1 atVert:(int)int2
+{
+	return [self tableViewCellDatasAtTabIndex:int1 verticalTabIndex:int2];
 }
 
 -(NSUInteger) countOfTableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2
 {
-	return [[self tableViewCellDatasAtTabIndex:int1 verticalTabIndex:int2] count];
+	return [[self cellAtHor:int1 atVert:int2] count];
 }
 
 -(NSDictionary*) tableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3
 {
-	return [[self tableViewCellDatasAtTabIndex:int1 verticalTabIndex:int2] objectAtIndex: int3];
+	return [[self cellAtHor:int1 atVert:int2] objectAtIndex: int3];
 }
 
 -(NSInteger)getType:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3
@@ -113,16 +116,6 @@ static BigBigDataStore *singletonInstance = nil;
 	singletonInstance = nil;
 }
 
--(NSArray*) jsonStructure
-{
-	return data.jsonStructure;
-}
-
--(void) setJsonStructure:(NSArray *)anArray
-{
-	data.jsonStructure = anArray;
-}
-
 -(id) init
 {
 	self = [super init];
@@ -131,7 +124,7 @@ static BigBigDataStore *singletonInstance = nil;
 		NSString *mainDataPath = [[NSBundle mainBundle] pathForResource:@"mainData" ofType:@"json"];
 		NSData *jsonChunk = [NSData dataWithContentsOfFile: mainDataPath];
 		NSError *error = nil;
-		self.jsonStructure = [NSJSONSerialization JSONObjectWithData:jsonChunk options:0 error:&error];		
+		data.jsonStructure = [NSJSONSerialization JSONObjectWithData:jsonChunk options:0 error:&error];		
 	}
 	return self;
 }
