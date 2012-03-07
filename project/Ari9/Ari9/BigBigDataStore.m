@@ -8,6 +8,77 @@
 
 #import "BigBigDataStore.h"
 
+
+@implementation BigBigData
+@synthesize jsonStructure;
+-(void) dealloc
+{
+	self.jsonStructure = nil;
+	[super dealloc];
+}
+
+-(id) initWithArray:(NSArray*)anArray
+{
+	self = [super init];
+	if(self){
+		self.jsonStructure = anArray;
+	}
+	return self;
+}
+
+-(NSString*) horizontalTabTitleAtIndex:(int)anInteger
+{
+	return [[self.jsonStructure objectAtIndex: anInteger] objectForKey: @"타이틀"];
+}
+
+-(NSString*) verticalTabTitleAtIndex:(int)int1 atIndex:(int)int2
+{
+	NSDictionary *horizontalTab = [self.jsonStructure objectAtIndex: int1];
+	NSArray *verticalTabBarItems = [horizontalTab objectForKey: @"수직탭바"];
+	
+	NSDictionary *vtab = [verticalTabBarItems objectAtIndex:int2];
+	return [vtab objectForKey:@"타이틀"];
+}
+
+-(NSArray*) verticalTabsAtIndex:(int)int1
+{
+	return [[self.jsonStructure objectAtIndex: int1] objectForKey: @"수직탭바"];
+}
+
+-(NSUInteger) countOfVerticalTabsAtIndex:(int)int1
+{
+	return [[self verticalTabsAtIndex:int1] count];
+}
+
+-(NSArray*) tableViewCellDatasAtTabIndex:(int)int1 verticalTabIndex:(int)int2
+{
+	NSDictionary *vtab = [[self verticalTabsAtIndex:int1] objectAtIndex:int2];
+	
+	NSArray *vtabItems = [vtab objectForKey:@"table items"];
+	return vtabItems;	
+}
+
+-(NSUInteger) countOfTableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2
+{
+	return [[self tableViewCellDatasAtTabIndex:int1 verticalTabIndex:int2] count];
+}
+
+-(NSDictionary*) tableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3
+{
+	return [[self tableViewCellDatasAtTabIndex:int1 verticalTabIndex:int2] objectAtIndex: int3];
+}
+
+-(NSInteger)getType:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3
+{
+	NSString *str =  [[self tableViewCellDataAtTabIndex:int1 verticalTabIndex:int2 rowIndex:int3] objectForKey:@"type"];
+	if ([@"1" isEqualToString: str]) {
+		return [str intValue];
+	}
+	return -1;	
+}
+
+@end
+
 @implementation BigBigDataStore
 
 
@@ -42,13 +113,21 @@ static BigBigDataStore *singletonInstance = nil;
 	singletonInstance = nil;
 }
 
+-(NSArray*) jsonStructure
+{
+	return data.jsonStructure;
+}
 
+-(void) setJsonStructure:(NSArray *)anArray
+{
+	data.jsonStructure = anArray;
+}
 
-@synthesize jsonStructure;
 -(id) init
 {
 	self = [super init];
 	if(self){
+		data = [[BigBigData alloc] init];
 		NSString *mainDataPath = [[NSBundle mainBundle] pathForResource:@"mainData" ofType:@"json"];
 		NSData *jsonChunk = [NSData dataWithContentsOfFile: mainDataPath];
 		NSError *error = nil;
@@ -59,61 +138,47 @@ static BigBigDataStore *singletonInstance = nil;
 
 -(NSString*) horizontalTabTitleAtIndex:(int)anInteger
 {
-	return [[jsonStructure objectAtIndex: anInteger] objectForKey: @"타이틀"];
+	return [data horizontalTabTitleAtIndex: anInteger];
 }
 
 -(NSString*) verticalTabTitleAtIndex:(int)int1 atIndex:(int)int2
 {
-	NSDictionary *horizontalTab = [jsonStructure objectAtIndex: int1];
-	NSArray *verticalTabBarItems = [horizontalTab objectForKey: @"수직탭바"];
-	
-	NSDictionary *vtab = [verticalTabBarItems objectAtIndex:int2];
-	return [vtab objectForKey:@"타이틀"];
+	return [data verticalTabTitleAtIndex:int1 atIndex:int2];
 }
 
 -(NSArray*) verticalTabsAtIndex:(int)int1
 {
-	return [[jsonStructure objectAtIndex: int1] objectForKey: @"수직탭바"];
+	return [data verticalTabsAtIndex:int1];
 }
 
 -(NSUInteger) countOfVerticalTabsAtIndex:(int)int1
 {
-	return [[self verticalTabsAtIndex:int1] count];
+	return [data countOfVerticalTabsAtIndex:int1];
 }
 
 -(NSArray*) tableViewCellDatasAtTabIndex:(int)int1 verticalTabIndex:(int)int2
 {
-	NSDictionary *vtab = [[self verticalTabsAtIndex:int1] objectAtIndex:int2];
-	
-	NSArray *vtabItems = [vtab objectForKey:@"table items"];
-	return vtabItems;	
+	return [data tableViewCellDatasAtTabIndex:int1 verticalTabIndex:int2];
 }
 
 -(NSUInteger) countOfTableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2
 {
-	return [[self tableViewCellDatasAtTabIndex:int1 verticalTabIndex:int2] count];
+	return [data countOfTableViewCellDataAtTabIndex:int1 verticalTabIndex:int2];
 }
-
 
 -(NSDictionary*) tableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3
 {
-	return [[self tableViewCellDatasAtTabIndex:int1 verticalTabIndex:int2] objectAtIndex: int3];
+	return [data tableViewCellDataAtTabIndex:int1 verticalTabIndex:int2 rowIndex:int3];
 }
 
 -(NSInteger)getType:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3
 {
-	NSString *str =  [[self tableViewCellDataAtTabIndex:int1 verticalTabIndex:int2 rowIndex:int3] objectForKey:@"type"];
-	if ([@"1" isEqualToString: str]) {
-		return [str intValue];
-	}
-	
-	return -1;
-	
+	return [data getType:int1 verticalTabIndex:int2 rowIndex:int3];
 }
 
 -(void) dealloc
 {
-	self.jsonStructure = nil;
+	[data release];
 	[super dealloc];
 }
 

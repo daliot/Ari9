@@ -8,8 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BigBigDataStore : NSObject{
+
+@interface BigBigData : NSObject
+{
 	NSArray *jsonStructure;
+}
+-(id) initWithArray:(NSArray*)anArray;
+@property(nonatomic,retain) NSArray *jsonStructure;
+-(NSString*) horizontalTabTitleAtIndex:(int)anInteger;
+-(NSString*) verticalTabTitleAtIndex:(int)int1 atIndex:(int)int2;
+-(NSUInteger) countOfVerticalTabsAtIndex:(int)int1;
+-(NSArray*) tableViewCellDatasAtTabIndex:(int)int1 verticalTabIndex:(int)int2;
+-(NSUInteger) countOfTableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2;
+-(NSDictionary*) tableViewCellDataAtTabIndex:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3;
+-(NSInteger)getType:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3;
+@end
+
+
+@interface BigBigDataStore : NSObject{
+	BigBigData *data;
 }
 + (BigBigDataStore *) sharedInstance;
 +(void) destroySharedInstance;

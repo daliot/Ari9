@@ -8,6 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
+@class BigBigData;
 @interface LogicTest : SenTestCase
+{
+	BigBigData *bigBig;
+}
 
 @end

@@ -163,6 +163,7 @@
 		EDF687E7150626DD0033DC4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED464FB314E142A400F90334 /* Foundation.framework */; };
 		EDF687ED150626DD0033DC4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDF687EB150626DD0033DC4B /* InfoPlist.strings */; };
 		EDF687F0150626DE0033DC4B /* LogicTest.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF687EF150626DD0033DC4B /* LogicTest.m */; };
+		EDF687F61506E7730033DC4B /* BigBigDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = EDA4B35214F65590006BF550 /* BigBigDataStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1230,6 +1231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDF687F0150626DE0033DC4B /* LogicTest.m in Sources */,
+				EDF687F61506E7730033DC4B /* BigBigDataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
