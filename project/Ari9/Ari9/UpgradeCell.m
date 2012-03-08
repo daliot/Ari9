@@ -15,6 +15,10 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+		
+		webView = [[UIWebView alloc] initWithFrame: CGRectMake(0, 0, 200, 100)];
+		[webView loadHTMLString:@"<H1>Hello</H1>" baseURL:nil];
+		[self addSubview: webView];
     }
     return self;
 }

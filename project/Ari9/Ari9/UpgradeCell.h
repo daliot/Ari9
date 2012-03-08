@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UpgradeCell : UITableViewCell
+{
+	UIWebView *webView;
+}
 - (void)setData:(NSDictionary*)cellDic type:(NSString*)str;
 - (void)setData:(NSDictionary*)cellDic;
 +(id) cellWithStyle:(UITableViewCellStyle)cellStyleInt tableView:(UITableView*) tableView cellDic:(NSDictionary*)cellDic;
