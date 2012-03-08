@@ -57,6 +57,11 @@ static BigBigDataStore *singletonInstance = nil;
 	return self;
 }
 
+-(NSInteger) countOfHorizontalTabs
+{
+	return [jsonStructure count];
+}
+
 -(NSString*) horizontalTabTitleAtIndex:(int)anInteger
 {
 	return [[jsonStructure objectAtIndex: anInteger] objectForKey: @"타이틀"];
@@ -102,7 +107,8 @@ static BigBigDataStore *singletonInstance = nil;
 
 -(NSInteger)getType:(int)int1 verticalTabIndex:(int)int2 rowIndex:(int)int3
 {
-	NSString *str =  [[self tableViewCellDataAtTabIndex:int1 verticalTabIndex:int2 rowIndex:int3] objectForKey:@"type"];
+	NSArray *levels = [self tableViewCellDataAtTabIndex:int1 verticalTabIndex:int2 rowIndex:int3];
+	NSString *str =  [[levels objectAtIndex:0] objectForKey:@"type"];
 	if ([@"1" isEqualToString: str]) {
 		return [str intValue];
 	}

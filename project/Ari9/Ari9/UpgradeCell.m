@@ -27,8 +27,9 @@
 }
 
 
-- (void)setData:(NSDictionary*)cellDic type:(NSString*)str
+- (void)setData:(NSDictionary*)levels type:(NSString*)str
 {
+	NSDictionary *cellDic = [levels objectAtIndex:0];
 	NSMutableString *string = [NSMutableString string];
 	[string appendFormat:@"%@\n",str];
 	for (NSString *keyObj in cellDic) {
