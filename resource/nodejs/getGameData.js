@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-exports.gameDataFunc = function(res) 
+exports.mainFunc = function(req, res) 
 {
     //res.write("<JSON DATA>");
     console.log("getGameData");

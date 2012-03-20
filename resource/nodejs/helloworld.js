@@ -2,6 +2,13 @@ var myModule = require('./login.js');
 var getVersionModule = require('./getVersion.js');
 var gameDataModule = require('./getGameData.js');
 
+var dispatchDictionary = {
+	"/login/" : myModule,
+	"/getUpdateVersion" : getVersionModule,
+	"/getGameData" : gameDataModule
+};
+
+
 var http = require('http');
 
 
@@ -16,28 +23,14 @@ http.createServer(function (req, res) {
     res.end();
     return;
   }
-
-  // 로그인 (아이디/패스워드 확인)
-  if(method === "/login/") {
-  	  myModule.loginFunc(res, requestUrl);
-	  return;
+  
+  var selMo = dispatchDictionary[method];
+  if(selMo==null){
+     res.write("unknown api: \""+req.url+"\"");
+     res.end();
+     return;
   }
-
-  // 게임 데이터 최신 버전 확인 하기
-  if(method == "/getUpdateVersion") {
-		getVersionModule.versionFunc(res);
-		return;
-  } 
-
-  // 최신 게임 데이터 가져오기
-  if(method == "/getGameData") {
-	  gameDataModule.gameDataFunc(res);
-	  return;
-  }
-
-   res.write("unknown api: \""+req.url+"\"");
-   res.end();
-
+  selMo.mainFunc(req,res);
 
 }).listen(1337, '127.0.0.1');
 console.log('Server running at http://127.0.0.1:1337/');
