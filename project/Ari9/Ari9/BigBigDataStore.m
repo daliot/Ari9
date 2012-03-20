@@ -42,13 +42,41 @@ static BigBigDataStore *singletonInstance = nil;
 	singletonInstance = nil;
 }
 
+-(NSNumber*) versionInfo
+{
+	return [NSNumber numberWithInt:20100313];
+}
 
+-(void) getGameDataJsonFromServer
+{
+	NSData *versionInfo = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://localhost:1337/getUpdateVersion"]];
+	NSString *versionString = [[NSString alloc] initWithData:versionInfo encoding:NSUTF8StringEncoding];
+	if([[self versionInfo] intValue] < [versionString intValue]){
+		NSData *jsonChunk = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://localhost:1337/getGameData"]];
+		NSError *error = nil;
+		NSArray *jsonGameData = [NSJSONSerialization JSONObjectWithData:jsonChunk options:0 error:&error];
+		NSArray *paths = NSSearchPathForDirectoriesInDomains
+		(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSLog(@"jsonGameData %@", jsonGameData);
+		NSLog(@"documentsDirectory %@", documentsDirectory);
+		//TODO: Documents 디렉토리가 iTunes로 접근 가능하여 보안 취약. 다른 경로에 저장하자.
+		[jsonChunk writeToFile:[documentsDirectory stringByAppendingPathComponent: @"/downloadedGameData.json"] atomically:YES];
+	}
+	else {
+		NSLog(@"버전이 같아서 아무 것도 받지 않았다.");
+	}
+}
 
 @synthesize jsonStructure;
 -(id) init
 {
 	self = [super init];
 	if(self){
+		
+		[self getGameDataJsonFromServer];
+		
+		
 		NSString *mainDataPath = [[NSBundle mainBundle] pathForResource:@"mainData" ofType:@"json"];
 		NSData *jsonChunk = [NSData dataWithContentsOfFile: mainDataPath];
 		NSError *error = nil;
