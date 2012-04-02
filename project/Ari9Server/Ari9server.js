@@ -2,6 +2,7 @@ var myModule = require('./login.js');
 var getVersionModule = require('./getVersion.js');
 var gameDataModule = require('./getGameData.js');
 
+
 var dispatchDictionary = {
 	"/login/" : myModule,
 	"/getUpdateVersion" : getVersionModule,
